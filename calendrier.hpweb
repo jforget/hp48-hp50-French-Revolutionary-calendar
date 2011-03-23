@@ -1,0 +1,386 @@
+fr: Calendriers
+en: Calendars
+---
+- section: 0
+  fr: Conversion entre calendriers
+  en: Conversion between calendars
+- fr: |
+    Cette série de programmes s'applique à trois calendriers
+    différents.
+
+    <ul>
+    <li> Le calendrier grégorien proleptique. Il s'agit du
+    calendrier grégorien, extrapolé dans le passé au-delà
+    de l'année 1582, bien que la HP-48
+    n'accepte les dates qu'à partir de cette année.
+    Les dates grégoriennes sont exprimées avec un nombre au format
+    JJ,MMAAAA ou bien MM,JJAAAA, en fonction de l'indicateur -42.</li>
+
+    <li> Le <i lang='la'>Rata Die</i> (RD).  C'est un calendrier qui 
+    ignore totalement les années.  Il ne compte que les jours, à partir
+    du 1<sup>er</sup> janvier de l'an 1 du calendrier grégorien
+    proleptique. Très pratique pour les 
+    calculateurs, beaucoup moins pour les humains.</li>
+
+    <li> Le calendrier républicain. Le calendrier républicain
+    a été en vigueur jusqu'en 1805, mais les programmes permettent
+    d'utiliser des dates jusqu'à aujourd'hui et au-delà.
+    Les dates sont exprimées par un nombre au format AAAAMMJJ.</li>
+    </ul>
+
+- section: GRRD
+  fr: Conversion de grégorien en  <i lang='la'>Rata Die</i>
+  en: Conversion from Gregorian to <i lang='la'>Rata Die</i>
+  level: 3
+- fr: |
+    La conversion grégorien &#8594; RD s'effectue
+    en deux ou trois étapes. Prenons par exemple une date au
+    13 septembre 1515 grégorien (une dizaine de jours avant la bataille de Marignan,
+    qui a eu lieu les 13 et 14 septembre 1515 exprimés dans le calendrier
+    julien).
+    On se ramène à une date postérieure à 1600, par pas de 400 ans.
+    Dans ce cas, cela donne 13 septembre 1915. Les trois étapes
+    sont donc
+
+    <ul>
+    <li>le RD du 1<sup>er</sup> janvier 2001 (une constante, 730486),
+    <li>le nombre de jours (algébrique) du 1<sup>er</sup> janvier 2001 au 13 
+    septembre 1915,
+    <li>le nombre de jours (algébrique) du 13 septembre 1915 au 13 
+    septembre 1515 (étape inexistante si la date à convertir avait
+    été postérieure au 31 décembre 1599).</li>
+    </ul>
+
+    À noter que l'un des avantages du 1<sup>er</sup> janvier 2001 est
+    qu'il s'écrit de façon indépendante du flag -42. C'est
+    1,012001 aussi bien en JJ,MMAAAA qu'en MM,JJAAAA.
+
+- code: |
+    « 0 \-> GR RD
+      «
+        WHILE GR 100 * FP 10000 * 1600 <
+        REPEAT
+         ,0004  'GR' STO+
+         146097 'RD' STO+
+        END 
+        1,012001 GR DDAYS RD - 730486 +
+      »
+    »
+
+- section: RDGR
+  fr: Conversion de <i lang='la'>Rata Die</i> en grégorien.
+  level: 3
+
+- fr: |
+    C'est le même principe en trois étapes, sauf que l'on se ramène
+    à une date en 2001 ou postérieure, on ne se contente pas de 1600.
+    Cela pourrait être modifié. Il suffit de calculer le RD de
+    la date seuil.
+
+- code: |
+    « \-> J
+      « 0
+        WHILE J 730486 \<=
+        REPEAT 
+         ,0004 +
+         146097 'J' STO+
+        END 
+        J 730486 - 
+        1,012001 SWAP DATE+
+        SWAP -
+      »
+    »
+
+- section: FRBIS
+  level: 3
+  fr: Nombre de jours bissextiles précédant l'année N  du calendrier républicain.
+  en: Number of leap days preceding the French Revolutionary year N
+
+- fr: |
+    Jusqu'en l'an 20, les années bissextiles sont calculées pour que le 
+    jour de l'an coïncide avec l'équinoxe d'automne. Les années 
+    bissextiles sont donc les années 3, 7, 11 et 15. À partir de l'an 20, 
+    on adopte la règle de Romme, purement arithmétique. C'est la même 
+    règle modulo 4, 100 et 400 que pour le calendrier grégorien.
+
+- code: |
+    « \-> A
+      « 'A' DECR 4 / IP 
+        A 100 / IP - 
+        A 400 / IP +
+        IF { 3 7 11 15 } A POS 0 \=/
+        THEN 1 +
+        END
+      »
+    »
+
+- section: FRRD
+  fr: Conversion de républicain en <i lang='la'>Rata Die</i>
+  en: Conversion from French Revolutionary to <i lang='la'>Rata Die</i>
+  level: 3
+
+- code: |
+    « \-> F
+      « F 100 MOD
+        F 100 / IP 100 MOD 30 * +
+        F 10000 / IP 'F' STO
+        F 365 * + F FRBIS + 654019 +
+      »
+    »
+
+- section: RDFR
+  fr: Conversion de <i lang='la'>Rata Die</i> en républicain
+  en: Conversion from <i lang='la'>Rata Die</i> to French Revolutionary
+  level: 3
+
+- fr: |
+    On commence par se ramener au ``zéro" Vendémiaire de
+    l'an I. Puis on calcule une estimation de l'année,
+    en se basant sur une durée de 365&nbsp;jours, ce
+    qui donne donc une valeur plus élevée que la valeur
+    réelle. Ensuite, on compare le 1<sup>er</sup> Vendémiaire
+    de l'année calculée avec la date à traduire. Si la
+    valeur calculée de l'année est trop forte, c'est-à-dire
+    si le 1<sup>er</sup> Vendémiaire calculé est postérieur à la
+    date à traduire, on recule d'un an. Ce test et ce
+    recul sont dans une boucle, dans l'éventualité où
+    l'estimation de l'année dépasserait la valeur véritable
+    de 2, 3, voire plus (cela se produit au bout de 1&nbsp;500&nbsp;ans
+    et des poussières, lorsque 365&nbsp;jours bissextiles se sont accumulés
+    et que l'on demande la conversion d'une date de la fin de l'année). 
+    Une fois le bon 1<sup>er</sup> Vendémiaire
+    obtenu, on calcule le nombre de jours entre lui et
+    la date à convertir, ce qui donne le nombre de mois
+    et le nombre de jours dans le dernier mois.
+
+- code: |
+    « 0 \-> J D
+      «
+        J 10100 FRRD -
+        365 / IP 10000 *
+        10101 + 'D' STO
+        WHILE D FRRD J >
+        REPEAT 
+          D 10000 - 'D' STO
+        END 
+        J D FRRD -
+        DUP 30 / IP 100 *
+        SWAP 30 MOD + D +
+      »
+    »
+
+- section: 0
+  fr: Affichage d'une date du calendrier républicain
+
+- fr: |
+    Compte tenu de la taille, la variable FRF est facultative
+    et l'affichage de la date tient compte du fait que
+    FRF peut exister ou ne pas exister.
+
+    Chaque élément de la liste FRF est composé d'un chiffre
+    puis d'un texte. Le chiffre permet de savoir si le texte 
+    commence par une voyelle ou une consonne et dans le
+    second cas s'il est masculin ou féminin. Avec le cas
+    spécial du pluriel pour le "jour des récompenses".
+    Ce chiffre est traduit en un préfixe "jour du", 
+    "jour de la" etc. Avec une nuance en plus&nbsp;:
+    un "0" signifie "masculin en toute certitude"
+    tandis qu'un "4" signifie "vraisemblablement masculin",
+    tout comme "5" signifie "vraisemblablement féminin".
+    C'est pour cela que l'on duplique la liste des
+    préfixes sur elle-même.
+
+- code: |
+    {
+    "0raisin" "0safran" "1châtaigne" "1colchique"
+    ...
+    "1vertu" "0génie" "0travail" "2opinion" 
+    "3récompenses" "1révolution"
+    }
+
+- section: FRLONG
+- code: |
+    « \-> D
+      « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
+            "Sexti" "Septi" "Octi" "Noni" "Déca" }
+        D 1 - 10 MOD 1 + GET "di " +
+        D 100 MOD +" " +
+        { "Vendémiaire" "Brumaire" "Frimaire"
+          "Nivôse" "Pluviôse" "Ventôse"
+          "Germinal" "Floréal" "Prairial"
+          "Messidor" "Thermidor" "Fructidor"
+          "jour additionnel" } 
+        D 100 / IP 100 MOD GET + " " +
+        D 10000 / IP N10R +
+        IF 'FRF' VTYPE 0 \>=
+        THEN
+          FRF D 100 MOD D 100 / IP 100 MOD 1 - 30 * + GET
+          DUP 1 1 SUB
+          { " jour du " " jour de la " " jour de l'"
+            " jour des " }
+          DUP + SWAP NUM 47 - GET SWAP 2 30 SUB + +
+        END
+      »
+    »
+
+- section: maintenant
+  fr: Date du jour
+
+- fr: |
+    Routine qui affiche la date du jour et l'heure décimale.
+
+- code: |
+    « DATE @GRRD@ @RDFR@ @FRLONG@
+    " " + TIME @H24H10@ + 21 @JUSTIF@ »
+
+- section: 0
+  fr: Heure décimale
+
+- fr: |
+    Il avait été question de décimaliser l'heure, avec 
+    10&nbsp;heures par jour, 100&nbsp;minutes par heure et 100&nbsp;secondes
+    par minute. Cette partie de la réforme n'a jamais été 
+    mise en application.
+
+- section: H24H10
+  fr: Conversion H24 &#8594; H10
+  level: 3
+
+- code: |
+    « HMS\-> 2,4 /  »
+
+- section: H10H24
+  fr: Conversion H10 &#8594; H24
+  level: 3
+
+- code: |
+    « 2,4 * \->HMS »
+
+- section: prh10
+  fr: Affichage de l'heure décimale
+  level: 3
+
+- fr: |
+    Affichage de l'heure décimale, sachant que le nombre
+    8,0317 doit donner "8:03:17", pas "8:3:17"
+
+- code: |
+    «  DUP IP ":" +
+      SWAP FP 100 * DUP IP
+      IF DUP 9 \<=
+      THEN "0" SWAP +
+      END
+      ":" + 
+      SWAP FP 100 * IP
+      IF DUP 9 \<=
+      THEN "0" SWAP +
+      END
+      + +
+    »
+
+- section: 0
+  fr: Outils annexes
+  en: Various Utilities
+
+- section: n10r
+  fr: Nombres romains
+  level: 3
+
+- fr: |
+    L'affichage traditionnel des années du calendrier
+    républicain utilise les chiffres romains. Voici la
+    routine de conversion.
+
+    Le sous-programme <tt>$\leftarrow$NR</tt> a pour but
+    de transvaser une valeur du nombre indo-arabe 
+    <tt>$\leftarrow$N</tt> vers le nombre romain
+    (niveau&nbsp;3 de la pile), après s'être assuré toutefois 
+    que c'était justifié. Au niveau 2, on a la valeur
+    à transvaser en romain, au niveau 1 la même valeur 
+    en indo-arabe.
+
+- code: |
+    « 
+     « DUP
+      IF \<-N \<=
+      THEN '\<-N' SWAP STO- +
+      ELSE DROP2
+      END
+     »
+    \-> \<-N \<-NR
+      « ""
+      1 3 START "M" 1000 \<-NR EVAL NEXT
+      "CM" 900 \<-NR EVAL
+      "D"  500 \<-NR EVAL
+      "CD" 400 \<-NR EVAL
+      1 3 START "C"  100 \<-NR EVAL NEXT
+      "XC"  90 \<-NR EVAL
+      "L"   50 \<-NR EVAL
+      "XL"  40 \<-NR EVAL
+      1 3 START "X"   10 \<-NR EVAL NEXT
+      "IX"   9 \<-NR EVAL
+      "V"    5 \<-NR EVAL
+      "IV"   4 \<-NR EVAL
+      1 3 START "I"    1 \<-NR EVAL NEXT
+      »
+    »
+
+- section: justif
+  fr: Justification de chaîne
+
+- fr: |
+    Cette routine n'a rien à voir intrinsèquement avec
+    le calendrier républicain. Elle permet d'assurer l'affichage
+    d'une chaîne pour une largeur d'écran donnée, en remplaçant
+    des espaces bien choisis par des sauts de ligne. Au niveau&nbsp;2,
+    mettre la chaîne, au niveau&nbsp;1, renseigner la largeur de
+    l'affichage.
+
+    <tt>I</tt> est l'indice du caractère courant, <tt>I10</tt>
+    l'indice du dernier saut de ligne rencontré et <tt>I32</tt>
+    l'indice du dernier espace rencontré. La condition pour
+    remplacer un blanc par un saut de ligne s'interprête
+    de la façon suivante&nbsp;:
+
+    1<sup>er</sup> cas, il y a au moins un espace parmi les <tt>LG</tt>
+    premiers caractères de la ligne. En d'autres termes, 
+    l'expression <tt>I32&nbsp;I10&nbsp;&gt;</tt> est vraie. La substitution
+    s'effecture dès que <tt>I</tt> dépasse <tt>I10&nbsp;LG&nbsp;+</tt>,
+    c'est-à-dire dès que <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> devient vraie.
+
+    2<sup>me</sup> cas, il y a plus de <tt>LG</tt> caractères d'affilée.
+    Ce qui signifie que <tt>I32&nbsp;I10&nbsp;&gt;</tt> est vraie depuis
+    un certain temps. On effectue alors le remplacement
+    dès que l'on trouve un espace, c'est-à-dire lorsque
+    <tt>I&nbsp;I32&nbsp;==</tt> est vraie.
+
+    Et en factorisant, on obtient la condition apparaissant
+    dans le programme. Lorsque l'on remplace un espace par
+    un saut de ligne, ne pas oublier de mettre à jour <tt>I10</tt>.
+    La valeur de <tt>I32</tt> n'est plus tout-à-fait correcte,
+    mais ce n'est pas très grave.
+
+- code: |
+    « 0 0 10 CHR \-> CH LG I10 I32 NL
+      «
+       1 CH SIZE  FOR 
+         I CH I I SUB
+         CASE
+           DUP " " ==
+             THEN I 'I32' STO DROP
+             END
+           NL ==
+            THEN I 'I10' STO
+            END
+         END
+         IF I I10 - LG >
+            I32 I10 > 
+            I I32 ==  OR AND 
+         THEN
+           CH I32 NL REPL 'CH' STO
+           I32 'I10' STO
+         END
+       NEXT
+       CH
+      »
+    »
