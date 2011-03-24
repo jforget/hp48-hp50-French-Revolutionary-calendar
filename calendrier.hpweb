@@ -223,7 +223,7 @@ en: Calendars
       »
     »
 
-- section: maintenant
+- section: MAINTENANT
   fr: Date du jour
 
 - fr: |
@@ -256,7 +256,7 @@ en: Calendars
 - code: |
     « 2,4 * \->HMS »
 
-- section: prh10
+- section: PRH10
   fr: Affichage de l'heure décimale
   level: 3
 
@@ -282,7 +282,7 @@ en: Calendars
   fr: Outils annexes
   en: Various Utilities
 
-- section: n10r
+- section: N10R
   fr: Nombres romains
   level: 3
 
@@ -291,9 +291,9 @@ en: Calendars
     républicain utilise les chiffres romains. Voici la
     routine de conversion.
 
-    Le sous-programme <tt>$\leftarrow$NR</tt> a pour but
+    Le sous-programme <tt>&#8592;NR</tt> a pour but
     de transvaser une valeur du nombre indo-arabe 
-    <tt>$\leftarrow$N</tt> vers le nombre romain
+    <tt>&#8592;N</tt> vers le nombre romain
     (niveau&nbsp;3 de la pile), après s'être assuré toutefois 
     que c'était justifié. Au niveau 2, on a la valeur
     à transvaser en romain, au niveau 1 la même valeur 
@@ -325,7 +325,7 @@ en: Calendars
       »
     »
 
-- section: justif
+- section: JUSTIF
   fr: Justification de chaîne
 
 - fr: |
