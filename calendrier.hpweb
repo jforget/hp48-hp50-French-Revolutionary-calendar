@@ -33,7 +33,7 @@ en: Calendars
   en: Conversion from Gregorian to <i lang='la'>Rata Die</i>
   level: 3
 - fr: |
-    La conversion grégorien &#8594; RD s'effectue
+    La conversion grégorien \-> RD s'effectue
     en deux ou trois étapes. Prenons par exemple une date au
     13 septembre 1515 grégorien (une dizaine de jours avant la bataille de Marignan,
     qui a eu lieu les 13 et 14 septembre 1515 exprimés dans le calendrier
@@ -124,7 +124,7 @@ en: Calendars
       « F 100 MOD
         F 100 / IP 100 MOD 30 * +
         F 10000 / IP 'F' STO
-        F 365 * + F FRBIS + 654019 +
+        F 365 * + F @FRBIS@ + 654019 +
       »
     »
 
@@ -156,14 +156,14 @@ en: Calendars
 - code: |
     « 0 \-> J D
       «
-        J 10100 FRRD -
+        J 10100 @FRRD@ -
         365 / IP 10000 *
         10101 + 'D' STO
-        WHILE D FRRD J >
+        WHILE D @FRRD@ J >
         REPEAT 
           D 10000 - 'D' STO
         END 
-        J D FRRD -
+        J D @FRRD@ -
         DUP 30 / IP 100 *
         SWAP 30 MOD + D +
       »
@@ -211,7 +211,7 @@ en: Calendars
           "Messidor" "Thermidor" "Fructidor"
           "jour additionnel" } 
         D 100 / IP 100 MOD GET + " " +
-        D 10000 / IP N10R +
+        D 10000 / IP @N10R@ +
         IF 'FRF' VTYPE 0 \>=
         THEN
           FRF D 100 MOD D 100 / IP 100 MOD 1 - 30 * + GET
@@ -243,14 +243,14 @@ en: Calendars
     mise en application.
 
 - section: H24H10
-  fr: Conversion H24 &#8594; H10
+  fr: Conversion H24 \-> H10
   level: 3
 
 - code: |
     « HMS\-> 2,4 /  »
 
 - section: H10H24
-  fr: Conversion H10 &#8594; H24
+  fr: Conversion H10 \-> H24
   level: 3
 
 - code: |
@@ -291,9 +291,9 @@ en: Calendars
     républicain utilise les chiffres romains. Voici la
     routine de conversion.
 
-    Le sous-programme <tt>&#8592;NR</tt> a pour but
+    Le sous-programme <tt>\<-NR</tt> a pour but
     de transvaser une valeur du nombre indo-arabe 
-    <tt>&#8592;N</tt> vers le nombre romain
+    <tt>\<-N</tt> vers le nombre romain
     (niveau&nbsp;3 de la pile), après s'être assuré toutefois 
     que c'était justifié. Au niveau 2, on a la valeur
     à transvaser en romain, au niveau 1 la même valeur 
