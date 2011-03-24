@@ -1,0 +1,30 @@
+In general
+----------
+
+This package contains HP-48 and HP-50 programs to convert
+Gregorian dates to French Revolutionary dates and in the other
+direction. It includes also a reform which was never put in effect,
+the decimalisation of time.
+
+hpcalc.org
+----------
+
+Installation procedure: not yet ready.
+
+github.org
+----------
+
+Unlike the package from hpcalc.org, you have only the base files,
+from which the others are generated. The tool to generate 
+the derived files can be found in another Git Hub repository.
+
+Note: this tool is still in development. Be sure to check
+the last version.
+
+For the moment, you can generate the HTML files and copy
+(by hand) the code into your HP computer. Since this file
+was derived from an older French-only file, the English
+documentation lags very far behind the French documentation.
+So, for the moment, you should learn French or wait for
+the English documentation to catch up.
+

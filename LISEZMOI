@@ -1,0 +1,32 @@
+Généralités
+-----------
+
+Vous trouvez ici des programmes pour HP-48 et HP-50
+pour convertir des dates du calendrier grégorien
+vers le calendrier républicain et vice-versa.
+Il y a également des programmes pour simuler une
+réforme qui n'a pas été appliquée, la décimalisation
+de l'heure.
+
+hpcalc.org
+----------
+
+Pas d'instructions d'installation pour l'instant.
+Le programme n'est même pas disponible sur ce site.
+
+github.org
+----------
+
+Contrairement au paquet fourni par hpcalc.org, vous ne
+trouvez ici que les fichiers origines, desquels les autres
+fichiers dérivent. Pour générer ces fichiers dérivés,
+il vous faut un outil, disponible dans un autre 
+dépôt Git Hub.
+
+NB: cet outil est en cours de développement. Vérifiez
+que vous avez la dernière version.
+
+En attendant, vous pouvez générer le fichier HTML et
+recopier (à la main !) le contenu vers votre calculateur
+HP, puis deviner le mode d'emploi du logiciel.
+
