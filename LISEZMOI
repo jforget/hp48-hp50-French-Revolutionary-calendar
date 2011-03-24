@@ -23,6 +23,8 @@ fichiers dérivent. Pour générer ces fichiers dérivés,
 il vous faut un outil, disponible dans un autre 
 dépôt Git Hub.
 
+https://github.com/jforget/perl-literate-prog-HP48-HP50
+
 NB: cet outil est en cours de développement. Vérifiez
 que vous avez la dernière version.
 

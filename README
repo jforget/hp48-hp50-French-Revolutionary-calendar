@@ -18,6 +18,8 @@ Unlike the package from hpcalc.org, you have only the base files,
 from which the others are generated. The tool to generate 
 the derived files can be found in another Git Hub repository.
 
+https://github.com/jforget/perl-literate-prog-HP48-HP50
+
 Note: this tool is still in development. Be sure to check
 the last version.
 
