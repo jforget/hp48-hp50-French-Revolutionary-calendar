@@ -1,0 +1,148 @@
+fr: Fêtes du calendrier républicain
+en: Feasts of the French Revolutionary calendar
+---
+- section: FRF
+- fr: |
+    Il s'agit d'une variable de gros volume, dont le chargement et l'utilisation dans l'outil de conversion
+    sont facultatifs. Cette variable fournit pour chaque jour de l'année la «&nbsp;fête&nbsp:»
+    du jour.
+
+    Le premier caractère permet de savoir quel article il faut appliquer au mot qui
+    suit. «&nbsp;0&nbsp;» pour «&nbsp;le&nbsp;» (nom masculin commençant par une consonne),
+    «&nbsp;1&nbsp;» pour «&nbsp;le&nbsp;» (nom féminin commençant par une consonne),
+    «&nbsp;2&nbsp;» pour «&nbsp;l'&nbsp;» (nom masculin ou féminin commençant par une voyelle),
+    «&nbsp;3&nbsp;» pour «&nbsp;les&nbsp;» (nom pluriel).
+    Dans certains cas, je n'étais pas sûr de l'article à utiliser. J'ai donc repéré ces mots
+    en leur attribuant «&nbsp;4&nbsp;» à la place de «&nbsp;0&nbsp;» (masculin)
+    ou «&nbsp;5&nbsp;» à la place de «&nbsp;1&nbsp;» (féminin).
+- en: |
+    This is a big variable, the use of which is optional. This variable gives the celebration
+    for each day in the French Revolutionary calendar.
+
+    The first character denotes which article will be used by the following word.
+    "0" for a masculine noun beginning with a consonant, which translates to "le",
+    "1" for a feminine noun beginning with a consonant, which translates to "la",
+    "2" for a masculin or feminine noun beginning with a vowel, which translates to "l'",
+    "3" for a plural noun beginning with any letter, which translates to "les".
+    In some cases, I was not sure of which article to use. I have marked these nouns
+    with "4" instead of "0" ("le", masculine) and "5" instead of "1" ("la", feminine).
+- code: |
+    { £VND£ £BRU£ £FRI£
+      £NIV£ £PLU£ £VNT£
+      £GER£ £FLO£ £PRA£
+      £MES£ £THE£ £FRU£ £ADD£
+    }
+- section: VND
+  'fr,en': Vendémiaire
+- code: |
+    "0raisin"           "0safran"           "1châtaigne"        "1colchique"        "0cheval"
+    "1balsamine"        "1carotte"          "2amarante"         "0panais"           "1cuve"
+    "1pomme de terre"   "2immortelle"       "0potiron"          "0réséda"           "2âne"
+    "1belle de nuit"    "1citrouille"       "0sarrasin"         "0tournesol"        "0pressoir"
+    "0chanvre"          "1pêche"            "0navet"            "2amaryllis"        "0boeuf"
+    "2aubergine"        "0piment"           "1tomate"           "2orge"             "0tonneau"
+- section: BRU
+  'fr,en': Brumaire
+- code: |
+    "1pomme"            "0céleri"           "1poire"            "1betterave"        "2oie"
+    "2héliotrope"       "1figue"            "1scorsonère"       "2alisier"          "1charrue"
+    "0salsifis"         "1macre"            "0topinambour"      "2endive"           "0dindon"
+    "4chervis"          "0cresson"          "1dentelaire"       "1grenade"          "1herse"
+    "5bacchante"        "2azerole"          "1garance"          "2orange"           "0faisan"
+    "1pistache"         "4macjon"           "0coing"            "0cormier"          "0rouleau"
+- section: FRI
+  'fr,en': Frimaire
+- code: |
+    "1raiponce"         "0turneps"          "1chicorée"         "1nèfle"            "0cochon"
+    "1mâche"            "0chou-fleur"       "0miel"             "0genièvre"         "1pioche"
+    "1cire"             "0raifort"          "0cèdre"            "0sapin"            "0chevreuil"
+    "2ajonc"            "0cyprès"           "0lierre"           "1sabine"           "0hoyau"
+    "2érable-sucre"     "1bruyère"          "0roseau"           "2oseille"          "0grillon"
+    "0pignon"           "0liège"            "1truffe"           "2olive"            "1pelle"
+- section: NIV
+  'fr,en': Nivôse
+- code: |
+    "1tourbe"           "1houille"          "0bitume"           "0soufre"           "0chien"
+    "1lave"             "1terre végétale"   "0fumier"           "0salpêtre"         "0fléau"
+    "0granit"           "2argile"           "2ardoise"          "0grès"             "0lapin"
+    "0silex"            "1marne"            "1pierre à chaux"   "0marbre"           "0van"
+    "1pierre à plâtre"  "0sel"              "0fer"              "0cuivre"           "0chat"
+    "2étain"            "0plomb"            "0zinc"             "0mercure"          "0crible"
+- section: PLU
+  'fr,en': Pluviôse
+- code: |
+    "1lauréole"         "1mousse"           "0fragon"           "0perce-neige"      "0taureau"
+    "0laurier-thym"     "2amadouvier"       "0mézéréon"         "0peuplier"         "1cognée"
+    "2ellébore"         "0brocoli"          "0laurier"          "2avelinier"        "1vache"
+    "0buis"             "0lichen"           "2if"               "1pulmonaire"       "1serpette"
+    "0thlaspi"          "0thymelé"          "0chiendent"        "1traînasse"        "0lièvre"
+    "1guède"            "0noisetier"        "0cyclamen"         "1chélidoine"       "0traîneau"
+- section: VNT
+  'fr,en': Ventôse
+- code: |
+    "0tussilage"        "0cornouiller"      "0violier"          "0troène"           "0bouc"
+    "2asaret"           "2alaterne"         "1violette"         "0marsault"         "1bêche"
+    "0narcisse"         "2orme"             "1fumeterre"        "0vélar"            "1chèvre"
+    "2épinard"          "0doronic"          "0mouron"           "0cerfeuil"         "0cordeau"
+    "1mandragore"       "0persil"           "0cochléaria"       "1pâquerette"       "0thon"
+    "0pissenlit"        "1sylvie"           "0capillaire"       "0frêne"            "0plantoir"
+- section: GER
+  'fr,en': Germinal
+- code: |
+    "1primevère"        "0platane"          "2asperge"          "1tulipe"           "1poule"
+    "1blette"           "0bouleau"          "1jonquille"        "2aulne"            "0couvoir"
+    "1pervenche"        "0charme"           "1morille"          "0hêtre"            "2abeille"
+    "1laitue"           "0mélèze"           "1ciguë"            "0radis"            "1ruche"
+    "0gainier"          "1romaine"          "0marronnier"       "1roquette"         "0pigeon"
+    "0lilas"            "2anémone"          "1pensée"           "1myrtille"         "0greffoir"
+- section: FLO
+  'fr,en': Floréal
+- code: |
+    "1rose"             "0chêne"            "1fougère"          "2aubépine"         "0rossignol"
+    "2ancolie"          "0muguet"           "0champignon"       "1jacinthe"         "0rateau"
+    "1rhubarbe"         "0sainfoin"         "0bâton-d'or"       "4chamérisier"      "0ver à soie"
+    "1consoude"         "1pimprenelle"      "1corbeille-d'or"   "2arroche"          "0sarcloir"
+    "0statice"          "1fritillaire"      "1bourrache"        "1valériane"        "1carpe"
+    "0fusain"           "1civette"          "1buglosse"         "0sénevé"           "1houlette"
+- section: PRA
+  'fr,en': Prairial
+- code: |
+    "1luzerne"          "2hémérocalle"      "0trèfle"           "2angélique"        "0canard"
+    "1mélisse"          "0fromental"        "0martagon"         "0serpolet"         "1faux"
+    "1fraise"           "1bétoine"          "0pois"             "2acacia"           "1caille"
+    "2oeillet"          "0sureau"           "0pavot"            "0tilleul"          "1fourche"
+    "0barbeau"          "1camomille"        "0chèvrefeuille"    "0caille-lait"      "1tanche"
+    "0jasmin"           "1verveine"         "0thym"             "1pivoine"          "0chariot"
+- section: MES
+  'fr,en': Messidor
+- code: |
+    "0seigle"           "2avoine"           "2oignon"           "1véronique"        "0mulet"
+    "0romarin"          "0concombre"        "2échalotte"        "2absinthe"         "1faucille"
+    "0coriandre"        "2artichaut"        "1giroflée"         "1lavande"          "0chamois"
+    "0tabac"            "1groseille"        "1gesse"            "1cerise"           "0parc"
+    "1menthe"           "0cumin"            "0haricot"          "2orcanète"         "1pintade"
+    "1sauge"            "2ail"              "1vesce"            "0blé"              "5chalémie"
+- section: THE
+  'fr,en': Thermidor
+- code: |
+    "2épautre"          "0bouillon-blanc"   "0melon"            "2ivraie"           "0bélier"
+    "1prèle"            "2armoise"          "0carthame"         "1mûre"             "2arrosoir"
+    "4panis"            "4salicor"          "2abricot"          "0basilic"          "1brebis"
+    "1guimauve"         "0lin"              "2amande"           "1gentiane"         "2écluse"
+    "1carline"          "0câprier"          "1lentille"         "2aunée"            "1loutre"
+    "1myrte"            "0colza"            "0lupin"            "0coton"            "0moulin"
+- section: FRU
+  'fr,en': Fructidor
+- code: |
+    "1prune"            "0millet"           "0lycoperdon"       "2escourgeon"       "0saumon"
+    "1tubéreuse"        "4sucrion"          "2apocyn"           "1réglisse"         "2échelle"
+    "1pastèque"         "0fenouil"          "2épine-vinette"    "1noix"             "1truite"
+    "0citron"           "1cardère"          "0nerprun"          "0tagette"          "1hotte"
+    "2églantier"        "1noisette"         "0houblon"          "0sorgho"           "2écrevisse"
+    "5bagarade"         "1verge-d'or"       "0maïs"             "0marron"           "0panier"
+- section: ADD
+  fr: Jours complémentaires
+  en: Additional Days
+- code: |
+    "1vertu"            "0génie"            "0travail"          "2opinion"          "3récompenses"
+    "1révolution"
