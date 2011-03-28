@@ -332,6 +332,18 @@ en: Calendars
       »
     »
 
+- section: FRABR
+  fr: Date en format abrégé
+  en: Abbreviated format date
+- code: |
+    « \-> D
+      « D 100 MOD " " +
+	{ "VND" "BRU" "FRI" "NIV" "PLU" "VNT"
+	"GER" "FLO" "PRA" "MES" "THE" "FRU" "S-C" }
+        D 100 / IP 100 MOD GET +
+        " " + D 10000 / IP +
+      »
+    »
 - section: MAINTENANT
   fr: Date du jour
 
@@ -388,6 +400,7 @@ en: Calendars
 
 - section: N10R
   fr: Nombres romains
+  en: Roman Numbers
   level: 3
 
 - fr: |
@@ -431,6 +444,7 @@ en: Calendars
 
 - section: JUSTIF
   fr: Justification de chaîne
+  en: String Justification
 
 - fr: |
     Cette routine n'a rien à voir intrinsèquement avec
