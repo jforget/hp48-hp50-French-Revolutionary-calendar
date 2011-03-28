@@ -16,7 +16,7 @@ en: Calendars
     Les dates grégoriennes sont exprimées avec un nombre au format
     JJ,MMAAAA ou bien MM,JJAAAA, en fonction de l'indicateur -42.</li>
 
-    <li> Le <i lang='la'>Rata Die</i> (RD).  C'est un calendrier qui 
+    <li> Le <i lang='la'>Rata Die</i> (RD). C'est un calendrier qui 
     ignore totalement les années.  Il ne compte que les jours, à partir
     du 1<sup>er</sup> janvier de l'an 1 du calendrier grégorien
     proleptique. Très pratique pour les 
@@ -25,9 +25,118 @@ en: Calendars
     <li> Le calendrier républicain. Le calendrier républicain
     a été en vigueur jusqu'en 1805, mais les programmes permettent
     d'utiliser des dates jusqu'à aujourd'hui et au-delà.
-    Les dates sont exprimées par un nombre au format AAAAMMJJ.</li>
+    Les dates sont exprimées par un nombre au format AAAAMMJJ.
+    Il y a douze mois de 30 jours chacun, plus 5 ou 6&nbsp;jours
+    complémentaires à la fin de l'année. Pour des raisons de simplicité,
+    ces jours complémentaires constituent un mois supplémentaire numéroté 13.
+    </li>
+    </ul>
+- en: |
+    This group of programs applies to three different calendars.
+
+    <ul>
+    <li> The proleptic Gregorian calendar. This is the Gregorian
+    calendar, but extending in the past farther than 1582, although
+    the HP-48 accepts dates only after this year. The Gregorian dates
+    are written in the standard HP-48 way, that is, DD,MMYYYY or
+    MM,DDYYYY depending on the setting of flag -42.
+    </li>
+    <li>The <i lang='la'>Rata Die</i> calendar. This calendar ignores
+    completely the notion of year. It counts only the days since 
+    January 1st, year 1, in the proleptic Gregorian calendar.
+    Very convenient for computers, much less for humans.
+    </li>
+    <li>The French Revolutionary calendar. This calendar was in effect
+    in France only and until 1805 only, but the programs allow you to
+    use dates past this limit, until today and beyond. The dates are
+    entered as integer numbers YYYYMMDD. This calendar contains
+    12 months of 30 days each, plus 5 o 6 additional days. For convenience,
+    these additional days are grouped together in what is considered
+    as an additional month, numbered 13.
+    </li>
     </ul>
 
+- section: 0
+  fr: Mode d'emploi
+  en: Instructions for Use
+
+- fr: |
+    En fait, le calendrier <i lang='la'>Rata Die</i> ne vous servira
+    pas en tant que tel, mais simplement comme intermédiaire entre
+    les deux autres.
+
+    Pour déterminer à quelle date du calendrier républicain correspond
+    le 6 juin 1944, voici comment procéder. Tapez au choix&nbsp;:
+- en: |
+    Actually, you will just use the <i lang='la'>Rata Die</i> calendar 
+    as a step between the two other calendars.
+
+    For example, you want to know which French Revolutionary date
+    corresponds to June 6th, 1944. Just type any of:
+- code: |
+    6,061944 @GRRD@ @RDFR@
+    6,061944 @GRRD@ @RDFR@ @FRABR@
+    6,061944 @GRRD@ @RDFR@ @FRLONG@
+- fr: |
+    et vous apprenez qu'il s'agit d'octidi, 18 prairial CLII.
+    Selon le cas, vous obtenez le résultat sous forme
+    numérique 1520918, sous forme abrégée «&nbsp;18&nbsp;PRA&nbsp;152&nbsp;»
+    ou sous forme longue.
+- en: |
+    and you learn that it was octidi, 18 prairial CLII.
+    Depending on the command you used, you obtain the 
+    result as a number, 1520918, as an abbreviated string
+    «&nbsp;18&nbsp;PRA&nbsp;152&nbsp;» or a long string.
+- fr: |
+    La conversion dans l'autre sens nécessite que vous connaissiez
+    l'ordre des mois et que vous fassiez de tête la conversion en
+    nombre. Ainsi, pour convertir le décadi 20 brumaire CXXVII,
+    vous convertissez de tête «&nbsp;brumaire&nbsp;» en «&nbsp;2&nbsp;»
+    puis vous tapez&nbsp;:
+- en: |
+    The reverse conversion requires you to know the order of the
+    months and to convert the date into a YYYYMMDD number by yourself.
+    For example, if you want to convert décadi 20 brumaire CXXVII,
+    you first have to convert «&nbsp;brumaire&nbsp;» into «&nbsp;2&nbsp;»
+    and then, you write:
+- code: |
+    1270220 @FRRD@ @RDGR@
+- fr: |
+    et vous obtenez 11,111918, c'st-à-dire le 11&nbsp;novembre 1918.
+- en: |
+    and you obtain 11,111918, which is November 11th, 1918.
+- fr: |
+    Il avait été question de décimaliser l'heure, avec 
+    10&nbsp;heures par jour, 100&nbsp;minutes par heure et 100&nbsp;secondes
+    par minute. Cette partie de la réforme n'a jamais été 
+    mise en application. Néanmoins, quelques programmes
+    vous permettent d'utiliser une heure décimale.
+- en: |
+    Another reform had been proposed, but never put in effect, 
+    the decimalisation of time. Each day was divided into 10 hours,
+    each hour into 100 minutes and each minute into 100 seconds.
+    Although this reform was never applied, a few programs
+    allow you to use a decimal time.
+- fr: |
+    Les heures décimales sont exprimées comme les heures normales
+    en H,MMSS. Pour convertir 19 h 45 en décimal, tapez au choix&nbsp;:
+- en: |
+    Decimal time has the same format as the usual sexagesimal time:
+    H,MMSS. To convert 19 h 45 (or 7 h 45 PM) into decimal, type any of:
+- code: |
+    19,45 @H24H10@ @PRH10@
+    19,45 @H24H10@
+- fr: et vous obtenez le nombre 8,2292 ou la chaîne "8:22:92".
+- en: and the result is either the number 8,2292 or the string "8:22:92".
+- fr: |
+    Une dernière commande utile est @MAINTENANT@, qui donne à la fois le
+    jour et l'heure courants, en utilisant le format long.
+- en: |
+    A last command is @MAINTENANT@ (now), which gives the current day
+    and current time in long format.
+- section: 0
+  fr: Les programmes
+  en: The programs
 - section: GRRD
   fr: Conversion de grégorien en  <i lang='la'>Rata Die</i>
   en: Conversion from Gregorian to <i lang='la'>Rata Die</i>
@@ -236,11 +345,6 @@ en: Calendars
 - section: 0
   fr: Heure décimale
 
-- fr: |
-    Il avait été question de décimaliser l'heure, avec 
-    10&nbsp;heures par jour, 100&nbsp;minutes par heure et 100&nbsp;secondes
-    par minute. Cette partie de la réforme n'a jamais été 
-    mise en application.
 
 - section: H24H10
   fr: Conversion H24 \-> H10
@@ -384,3 +488,12 @@ en: Calendars
        CH
       »
     »
+
+- section: 0
+  fr: Licence
+  en: License
+- fr: |
+    Ce code est diffusé sous les mêmes termes que Perl, la licence GPL
+    et la licence artistique.
+- en: |
+    This code is published under the same terms as Perl: GPL and Artistic License.
