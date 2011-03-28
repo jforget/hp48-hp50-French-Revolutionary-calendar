@@ -178,6 +178,7 @@ en: Calendars
 
 - section: RDGR
   fr: Conversion de <i lang='la'>Rata Die</i> en grégorien.
+  en: Conversion from <i lang='la'>Rata Die</i> into Gregorian.
   level: 3
 
 - fr: |
@@ -280,6 +281,7 @@ en: Calendars
 
 - section: 0
   fr: Affichage d'une date du calendrier républicain
+  en: Printing a French Revolutionary calendar date
 
 - fr: |
     Compte tenu de la taille, la variable FRF est facultative
@@ -308,6 +310,9 @@ en: Calendars
     }
 
 - section: FRLONG
+  fr: Date en format long
+  en: Long format date
+  level: 3
 - code: |
     « \-> D
       « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
@@ -335,17 +340,22 @@ en: Calendars
 - section: FRABR
   fr: Date en format abrégé
   en: Abbreviated format date
+  level: 3
+
 - code: |
     « \-> D
       « D 100 MOD " " +
-	{ "VND" "BRU" "FRI" "NIV" "PLU" "VNT"
-	"GER" "FLO" "PRA" "MES" "THE" "FRU" "S-C" }
+        { "VND" "BRU" "FRI" "NIV" "PLU" "VNT"
+        "GER" "FLO" "PRA" "MES" "THE" "FRU" "S-C" }
         D 100 / IP 100 MOD GET +
         " " + D 10000 / IP +
       »
     »
+
 - section: MAINTENANT
   fr: Date du jour
+  en: Current Date
+  level: 3
 
 - fr: |
     Routine qui affiche la date du jour et l'heure décimale.
@@ -356,17 +366,17 @@ en: Calendars
 
 - section: 0
   fr: Heure décimale
-
+  en: Decimal Time
 
 - section: H24H10
-  fr: Conversion H24 \-> H10
+  'fr,en': Conversion H24 \-> H10
   level: 3
 
 - code: |
     « HMS\-> 2,4 /  »
 
 - section: H10H24
-  fr: Conversion H10 \-> H24
+  'fr,en': Conversion H10 \-> H24
   level: 3
 
 - code: |
@@ -374,6 +384,7 @@ en: Calendars
 
 - section: PRH10
   fr: Affichage de l'heure décimale
+  en: Printing Decimal Time
   level: 3
 
 - fr: |
