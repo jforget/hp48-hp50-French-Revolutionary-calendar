@@ -478,7 +478,7 @@ en: Calendars
     c'est-à-dire dès que <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> devient vraie.
 
     2<sup>me</sup> cas, il y a plus de <tt>LG</tt> caractères d'affilée.
-    Ce qui signifie que <tt>I32&nbsp;I10&nbsp;&gt;</tt> est vraie depuis
+    Ce qui signifie que <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> est vraie depuis
     un certain temps. On effectue alors le remplacement
     dès que l'on trouve un espace, c'est-à-dire lorsque
     <tt>I&nbsp;I32&nbsp;==</tt> est vraie.
