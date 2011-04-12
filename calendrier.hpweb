@@ -104,7 +104,7 @@ en: Calendars
 - fr: |
     et vous obtenez 11,111918, c'st-à-dire le 11&nbsp;novembre 1918.
 - en: |
-    and you obtain 11,111918, which is November 11th, 1918.
+    and the result is 11,111918, which is November 11th, 1918.
 - fr: |
     Il avait été question de décimaliser l'heure, avec 
     10&nbsp;heures par jour, 100&nbsp;minutes par heure et 100&nbsp;secondes
@@ -152,9 +152,9 @@ en: Calendars
     sont donc
 
     <ul>
-    <li>le RD du 1<sup>er</sup> janvier 2001 (une constante, 730486),
+    <li>le RD du 1<sup>er</sup> janvier 2001 (une constante, 730486),</li>
     <li>le nombre de jours (algébrique) du 1<sup>er</sup> janvier 2001 au 13 
-    septembre 1915,
+    septembre 1915,</li>
     <li>le nombre de jours (algébrique) du 13 septembre 1915 au 13 
     septembre 1515 (étape inexistante si la date à convertir avait
     été postérieure au 31 décembre 1599).</li>
@@ -163,6 +163,21 @@ en: Calendars
     À noter que l'un des avantages du 1<sup>er</sup> janvier 2001 est
     qu'il s'écrit de façon indépendante du flag -42. C'est
     1,012001 aussi bien en JJ,MMAAAA qu'en MM,JJAAAA.
+- en: |
+    The Gregorian \-> RD conversion is processed in two or three steps.
+    Let us take, for example, the 13th September 1515 in the Gregorian
+    Calendar (ten days before the Battle of Marignan, which took place
+    on 13th September 1515, Julian calendar).
+    The first step consists in reaching a date on 1600 or later, with
+    400-year increments. In this case, this results in 13th September 1915.
+    The three steps are:
+    <ul>
+    <li>The RD value for 1st January 2001 (constant 730486),</li>
+    <li>The algebraical number of days from 1st January 2001 to 13th September
+    1915,</li>
+    <li>The algebraical number of days from 13th September 1915 to 13th September
+    1515 (this step does not occur if the date to convert is later than 31th December 1599).</li>
+    </ul>
 
 - code: |
     « 0 \-> GR RD
@@ -187,6 +202,11 @@ en: Calendars
     Cela pourrait être modifié. Il suffit de calculer le RD de
     la date seuil.
 
+- en: |
+    This is the same method in three steps, except that the intermediary
+    date is in 2001 or later, instead of just 1600. It could be modified,
+    just change the threshold date.
+    
 - code: |
     « \-> J
       « 0
@@ -213,6 +233,20 @@ en: Calendars
     on adopte la règle de Romme, purement arithmétique. C'est la même 
     règle modulo 4, 100 et 400 que pour le calendrier grégorien.
 
+- en: |
+    Until the year 20, the leap years were computed so that the first day of
+    the year would be on the autumn equinox. The leap years were 3, 7, 11 and 15.
+    Then, starting with year 20, the rule would be Romme's rule, a purely numerical one, 
+    like the Gregorian rule, with a 4-modulus, a 100-modulus and a 400-modulus.
+
+- fr: |
+    En réalité, la fonction utilise le calcul de Romme avec les modulos pour
+    toute la période, puis corrige le résultat pour les quelques cas où
+    la règle de l'équinoxe donne un résultat différent.
+
+- en: |
+    In fact, the function uses the modulus rule all the time, and fixes the
+    result for the few cases where the equinoxial rule differs from the modulus rule.
 - code: |
     « \-> A
       « 'A' DECR 4 / IP 
@@ -262,6 +296,20 @@ en: Calendars
     obtenu, on calcule le nombre de jours entre lui et
     la date à convertir, ce qui donne le nombre de mois
     et le nombre de jours dans le dernier mois.
+
+- en: |
+    We start by shifting the RD number to the "zeroth" Vendémiaire
+    of year I. Then, we compute an estimate of the year, by using
+    a 365-day duration, with no leap days. This gives an estimate 
+    greater than the actual value. So, we compare the 1st Vendémiaire
+    of this year with the date to translate. If the 1st Vendémiaire
+    is later than the translated date, we go back one year and we
+    iterate. This is done in a loop, because after 1500 years or so,
+    the estimated year can be 2 or 3 more than the actual year, after
+    365 leap days have accumulated. When we have reached the proper
+    1st Vendémiaire, we compute the number of days between it
+    and the translated date, which gives the number of months and
+    the day number in the month.
 
 - code: |
     « 0 \-> J D
