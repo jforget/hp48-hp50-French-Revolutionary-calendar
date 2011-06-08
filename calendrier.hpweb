@@ -1,5 +1,6 @@
 fr: Calendriers
 en: Calendars
+calfr: dir
 ---
 - section: 0
   fr: Conversion entre calendriers
@@ -23,7 +24,7 @@ en: Calendars
     calculateurs, beaucoup moins pour les humains.</li>
 
     <li> Le calendrier républicain. Le calendrier républicain
-    a été en vigueur jusqu'en 1805, mais les programmes permettent
+    a été en vigueur de 1792 à 1805, mais les programmes permettent
     d'utiliser des dates jusqu'à aujourd'hui et au-delà.
     Les dates sont exprimées par un nombre au format AAAAMMJJ.
     Il y a douze mois de 30 jours chacun, plus 5 ou 6&nbsp;jours
@@ -47,10 +48,10 @@ en: Calendars
     Very convenient for computers, much less for humans.
     </li>
     <li>The French Revolutionary calendar. This calendar was in effect
-    in France only and until 1805 only, but the programs allow you to
+    in France only and from 1792 to 1805 only, but the programs allow you to
     use dates past this limit, until today and beyond. The dates are
     entered as integer numbers YYYYMMDD. This calendar contains
-    12 months of 30 days each, plus 5 o 6 additional days. For convenience,
+    12 months of 30 days each, plus 5 or 6 additional days. For convenience,
     these additional days are grouped together in what is considered
     as an additional month, numbered 13.
     </li>
@@ -140,6 +141,7 @@ en: Calendars
 - section: GRRD
   fr: Conversion de grégorien en  <i lang='la'>Rata Die</i>
   en: Conversion from Gregorian to <i lang='la'>Rata Die</i>
+  calfr: 2
   level: 3
 - fr: |
     La conversion grégorien \-> RD s'effectue
@@ -194,6 +196,7 @@ en: Calendars
 - section: RDGR
   fr: Conversion de <i lang='la'>Rata Die</i> en grégorien.
   en: Conversion from <i lang='la'>Rata Die</i> into Gregorian.
+  calfr: 5
   level: 3
 
 - fr: |
@@ -261,6 +264,7 @@ en: Calendars
 - section: FRRD
   fr: Conversion de républicain en <i lang='la'>Rata Die</i>
   en: Conversion from French Revolutionary to <i lang='la'>Rata Die</i>
+  calfr: 4
   level: 3
 
 - code: |
@@ -275,6 +279,7 @@ en: Calendars
 - section: RDFR
   fr: Conversion de <i lang='la'>Rata Die</i> en républicain
   en: Conversion from <i lang='la'>Rata Die</i> to French Revolutionary
+  calfr: 2
   level: 3
 
 - fr: |
@@ -348,6 +353,22 @@ en: Calendars
     tout comme "5" signifie "vraisemblablement féminin".
     C'est pour cela que l'on duplique la liste des
     préfixes sur elle-même.
+- en: |
+    Because of its size, the FRF variable is optional and
+    the function printing the date can work no matter whether the
+    variable exists or not.
+
+    Each element of the FRF list consists of a digit 
+    and a string. The digit indicates if the string
+    begins with a vowel or a consonant and, in the latter
+    case, whether the name is masculine or feminine.
+    And there is the special case of the 
+    <i lang='fr'>jour des récompenses</i> (day of rewards)
+    the only case where the noun is plural. And there is another subtlety:
+    "0" means "definitely masculine", while "4" means "I think
+    it is masculine, but I am not sure". Likewise, "1" is "definitely
+    feminine", while "6" is "likely feminine". This is why the
+    prefix list is duplicated and appended to itself.
 
 - code: |
     {
@@ -360,13 +381,14 @@ en: Calendars
 - section: FRLONG
   fr: Date en format long
   en: Long format date
+  calfr:: 6
   level: 3
 - code: |
     « \-> D
       « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
             "Sexti" "Septi" "Octi" "Noni" "Déca" }
         D 1 - 10 MOD 1 + GET "di " +
-        D 100 MOD +" " +
+        D 100 MOD + " " +
         { "Vendémiaire" "Brumaire" "Frimaire"
           "Nivôse" "Pluviôse" "Ventôse"
           "Germinal" "Floréal" "Prairial"
@@ -388,6 +410,7 @@ en: Calendars
 - section: FRABR
   fr: Date en format abrégé
   en: Abbreviated format date
+  calfr: 7
   level: 3
 
 - code: |
@@ -403,10 +426,14 @@ en: Calendars
 - section: MAINTENANT
   fr: Date du jour
   en: Current Date
+  calfr: 1
   level: 3
 
 - fr: |
     Routine qui affiche la date du jour et l'heure décimale.
+- en: |
+    This code (translation for "NOW") prints the current
+    day and time.
 
 - code: |
     « DATE @GRRD@ @RDFR@ @FRLONG@
@@ -419,13 +446,29 @@ en: Calendars
 - section: H24H10
   'fr,en': Conversion H24 \-> H10
   level: 3
+  calfr: 8
 
+- fr: |
+    La décimalisation des minutes et secondes en fractions
+    d'heures est une fonction standard du RPL. La décimalisation
+    des heures-minutes-secondes s'en déduit ensuite avec
+    une simple division.
+- en: |
+    Decimalisation of minutes and seconds as fractions of hours
+    is a standard RPL function. The full decimalisation of hours,
+    minutes and seconds is therefore this function followed 
+    by a simple division.
 - code: |
     « HMS\-> 2,4 /  »
 
 - section: H10H24
   'fr,en': Conversion H10 \-> H24
   level: 3
+  calfr: 9
+- fr: |
+    La fonction inverse de ci-dessus.
+- en: |
+    The inverse function as above.
 
 - code: |
     « 2,4 * \->HMS »
@@ -433,11 +476,15 @@ en: Calendars
 - section: PRH10
   fr: Affichage de l'heure décimale
   en: Printing Decimal Time
+  calfr: 10
   level: 3
 
 - fr: |
     Affichage de l'heure décimale, sachant que le nombre
     8,0317 doit donner "8:03:17", pas "8:3:17"
+- en: |
+    This code prints the decimal time, with the provision
+    that 8,0317 must give "8:03:17", not "8:3:17".
 
 - code: |
     «  DUP IP ":" +
@@ -474,6 +521,16 @@ en: Calendars
     que c'était justifié. Au niveau 2, on a la valeur
     à transvaser en romain, au niveau 1 la même valeur 
     en indo-arabe.
+- en: |
+    Traditionally, the years of the French calendar
+    are written with Roman numerals. Here is the conversion function.
+
+    The subprogram <tt>\<-NR</tt> removes a number
+    from the indo-arabic value (<tt>\<-N</tt> variable)
+    and adds it to the Roman value (in the stack, at level 3), 
+    but checks first that is is allowed. In level 2, we have
+    the transferred value in Roman number and in level 1 we have
+    the same value in indo-arabic.
 
 - code: |
     « 
@@ -513,16 +570,30 @@ en: Calendars
     mettre la chaîne, au niveau&nbsp;1, renseigner la largeur de
     l'affichage.
 
+- en: |
+    This routine is not closely linked with the French calendar.
+    It allows the proper display of a string in a screen with 
+    a given width. For this, it replaces spaces with newlines.
+    The string is in level 2 and the width is in level 1.
+
+- fr: |
     <tt>I</tt> est l'indice du caractère courant, <tt>I10</tt>
     l'indice du dernier saut de ligne rencontré et <tt>I32</tt>
     l'indice du dernier espace rencontré. La condition pour
     remplacer un blanc par un saut de ligne s'interprête
     de la façon suivante&nbsp;:
 
+- en: |
+    <tt>I</tt> is the index of the current character, <tt>I10</tt>
+    is the index of the last encountered linefeed and <tt>I32</tt>
+    is the index of the last encountered space. The condition
+    to replace a space by a linefeed consists of the following:
+
+- fr: |
     1<sup>er</sup> cas, il y a au moins un espace parmi les <tt>LG</tt>
     premiers caractères de la ligne. En d'autres termes, 
     l'expression <tt>I32&nbsp;I10&nbsp;&gt;</tt> est vraie. La substitution
-    s'effecture dès que <tt>I</tt> dépasse <tt>I10&nbsp;LG&nbsp;+</tt>,
+    s'effectue dès que <tt>I</tt> dépasse <tt>I10&nbsp;LG&nbsp;+</tt>,
     c'est-à-dire dès que <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> devient vraie.
 
     2<sup>me</sup> cas, il y a plus de <tt>LG</tt> caractères d'affilée.
@@ -531,11 +602,28 @@ en: Calendars
     dès que l'on trouve un espace, c'est-à-dire lorsque
     <tt>I&nbsp;I32&nbsp;==</tt> est vraie.
 
+- en: |
+    First case, there is at least one space among the first <tt>LG</tt>
+    characters of the current line. In other words, the expression
+    <tt>I32&nbsp;I10&nbsp;&gt;</tt> is true. The substitution is executed
+    as soon as <tt>I</tt> overcomes <tt>I10&nbsp;LG&nbsp;+</tt>, that is,
+    as soon as <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> turns true.
+ 
+    Second case, there are more than <tt>LG</tt> successive characters.
+    That means that <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> has been true
+    for some time. So we execute the substitution on the first space, that is ,
+    when <tt>I&nbsp;I32&nbsp;==</tt> turns true.
+- fr: |
     Et en factorisant, on obtient la condition apparaissant
     dans le programme. Lorsque l'on remplace un espace par
     un saut de ligne, ne pas oublier de mettre à jour <tt>I10</tt>.
     La valeur de <tt>I32</tt> n'est plus tout-à-fait correcte,
     mais ce n'est pas très grave.
+- en: |
+    And if you factorise these conditions, you obtain the condition
+    coded below. When we replace a space with a newline, we must
+    update <tt>I10</tt>. The value of <tt>I32</tt> is no longer 
+    significant, but this is not a problem.
 
 - code: |
     « 0 0 10 CHR \-> CH LG I10 I32 NL
