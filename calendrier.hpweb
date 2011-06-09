@@ -103,7 +103,7 @@ calfr: dir
 - code: |
     1270220 @FRRD@ @RDGR@
 - fr: |
-    et vous obtenez 11,111918, c'st-à-dire le 11&nbsp;novembre 1918.
+    et vous obtenez 11,111918, c'est-à-dire le 11&nbsp;novembre 1918.
 - en: |
     and the result is 11,111918, which is November 11th, 1918.
 - fr: |
@@ -228,16 +228,16 @@ calfr: dir
   level: 4
 
 - fr: |
-    C'est la valeur <i lang='la'>rata die</i> du 1<sup>er</sup> janvier
-    2001. Elle est facile à calculer. Le <i lang='la'>rata die</i> 
+    C'est la valeur <i lang='la'>Rata Die</i> du 1<sup>er</sup> janvier
+    2001. Elle est facile à calculer. Le <i lang='la'>Rata Die</i> 
     du 1<sup>er</sup> janvier 1 est 1. À cela, il faut ajouter 2000 ans,
     soit 2000&nbsp;x&nbsp;365 = 730000, plus les 29 février. Il y a 500 années
     divisibles par 4, dont 15 ne sont pas bissextiles. Le nombre de 29 février
     est donc 485, d'où un total de 730486.
 
 - en: |
-    This is the <i lang='la'>rata die</i> value for January 1st, 2001.
-    This value is simple to compute. The <i lang='la'>rata die</i>
+    This is the <i lang='la'>Rata Die</i> value for January 1st, 2001.
+    This value is simple to compute. The <i lang='la'>Rata Die</i>
     value of January 1st, 1 is obviously 1. We add 2000 years, that is,
     2000&nbsp;x&nbsp;365 = 730000, plus the number of February 29st in
     this period. There are 500 years multiple of 4, 15 of which are not
@@ -505,10 +505,15 @@ calfr: dir
 - fr: |
     Affichage de l'heure décimale, sachant que le nombre
     8,0317 doit donner "8:03:17", pas "8:3:17"
+    Cela peut servir également pour les heures habituelles,
+    si vous acceptez d'avoir des heures à un seul chiffre
+    jusqu'à "9:59:59", au lieu de "09:59:59".
 - en: |
     This code prints the decimal time, with the provision
     that 8,0317 must give "8:03:17", not "8:3:17".
-
+    It works also for ordinary hours, provided you do not
+    mind having single-digit hours until "9:59:59", instead
+    of "09:59:59".
 - code: |
     «  DUP IP ":" +
       SWAP FP 100 * DUP IP
