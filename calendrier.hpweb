@@ -174,7 +174,7 @@ calfr: dir
     400-year increments. In this case, this results in 13th September 1915.
     The three steps are:
     <ul>
-    <li>The RD value for 1st January 2001 (constant 730486),</li>
+    <li>The RD value for 1st January 2001 (constant 730486 or |JAN_2001|),</li>
     <li>The algebraical number of days from 1st January 2001 to 13th September
     1915,</li>
     <li>The algebraical number of days from 13th September 1915 to 13th September
@@ -189,7 +189,7 @@ calfr: dir
          ,0004  'GR' STO+
          146097 'RD' STO+
         END 
-        1,012001 GR DDAYS RD - 730486 +
+        1,012001 GR DDAYS RD - |JAN_2001| +
       »
     »
 
@@ -213,16 +213,39 @@ calfr: dir
 - code: |
     « \-> J
       « 0
-        WHILE J 730486 \<=
+        WHILE J |JAN_2001| \<=
         REPEAT 
          ,0004 +
          146097 'J' STO+
         END 
-        J 730486 - 
+        J |JAN_2001| - 
         1,012001 SWAP DATE+
         SWAP -
       »
     »
+
+- section: JAN_2001
+  level: 4
+
+- fr: |
+    C'est la valeur <i lang='la'>rata die</i> du 1<sup>er</sup> janvier
+    2001. Elle est facile à calculer. Le <i lang='la'>rata die</i> 
+    du 1<sup>er</sup> janvier 1 est 1. À cela, il faut ajouter 2000 ans,
+    soit 2000&nbsp;x&nbsp;365 = 730000, plus les 29 février. Il y a 500 années
+    divisibles par 4, dont 15 ne sont pas bissextiles. Le nombre de 29 février
+    est donc 485, d'où un total de 730486.
+
+- en: |
+    This is the <i lang='la'>rata die</i> value for January 1st, 2001.
+    This value is simple to compute. The <i lang='la'>rata die</i>
+    value of January 1st, 1 is obviously 1. We add 2000 years, that is,
+    2000&nbsp;x&nbsp;365 = 730000, plus the number of February 29st in
+    this period. There are 500 years multiple of 4, 15 of which are not
+    leap years. Therefore, there are 485 leap years. And the sum
+    of these numbers gives the result, 730486.
+
+- code: |
+    730486
 
 - section: FRBIS
   level: 3
@@ -268,7 +291,7 @@ calfr: dir
   level: 3
 
 - code: |
-    « \-> F
+    « |FRBIS| \-> F FRBIS
       « F 100 MOD
         F 100 / IP 100 MOD 30 * +
         F 10000 / IP 'F' STO
@@ -381,10 +404,10 @@ calfr: dir
 - section: FRLONG
   fr: Date en format long
   en: Long format date
-  calfr:: 6
+  calfr: 6
   level: 3
 - code: |
-    « \-> D
+    « |N10R| \-> D N10R
       « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
             "Sexti" "Septi" "Octi" "Noni" "Déca" }
         D 1 - 10 MOD 1 + GET "di " +
@@ -437,7 +460,7 @@ calfr: dir
 
 - code: |
     « DATE @GRRD@ @RDFR@ @FRLONG@
-    " " + TIME @H24H10@ + 21 @JUSTIF@ »
+    " " + TIME @H24H10@ @PRH10@ + 21 @JUSTIF@ »
 
 - section: 0
   fr: Heure décimale
@@ -466,9 +489,9 @@ calfr: dir
   level: 3
   calfr: 9
 - fr: |
-    La fonction inverse de ci-dessus.
+    La fonction inverse de @H24H10@ ci-dessus.
 - en: |
-    The inverse function as above.
+    The inverse function as @H24H10@ above.
 
 - code: |
     « 2,4 * \->HMS »
@@ -514,7 +537,36 @@ calfr: dir
     républicain utilise les chiffres romains. Voici la
     routine de conversion.
 
-    Le sous-programme <tt>\<-NR</tt> a pour but
+- en: |
+    Traditionally, the years of the French calendar
+    are written with Roman numerals. Here is the conversion function.
+
+- code: |
+    « 
+      |NR|
+    \-> \<-N NR
+      « ""
+      1 3 START "M" 1000 @NR@ NEXT
+      "CM" 900 @NR@
+      "D"  500 @NR@
+      "CD" 400 @NR@
+      1 3 START "C"  100 @NR@ NEXT
+      "XC"  90 @NR@
+      "L"   50 @NR@
+      "XL"  40 @NR@
+      1 3 START "X"   10 @NR@ NEXT
+      "IX"   9 @NR@
+      "V"    5 @NR@
+      "IV"   4 @NR@
+      1 3 START "I"    1 @NR@ NEXT
+      »
+    »
+
+- section: NR
+  level: 4
+
+- fr: |
+    Le sous-programme <tt>NR</tt> a pour but
     de transvaser une valeur du nombre indo-arabe 
     <tt>\<-N</tt> vers le nombre romain
     (niveau&nbsp;3 de la pile), après s'être assuré toutefois 
@@ -522,10 +574,7 @@ calfr: dir
     à transvaser en romain, au niveau 1 la même valeur 
     en indo-arabe.
 - en: |
-    Traditionally, the years of the French calendar
-    are written with Roman numerals. Here is the conversion function.
-
-    The subprogram <tt>\<-NR</tt> removes a number
+    The subprogram <tt>NR</tt> removes a number
     from the indo-arabic value (<tt>\<-N</tt> variable)
     and adds it to the Roman value (in the stack, at level 3), 
     but checks first that is is allowed. In level 2, we have
@@ -533,34 +582,17 @@ calfr: dir
     the same value in indo-arabic.
 
 - code: |
-    « 
      « DUP
       IF \<-N \<=
       THEN '\<-N' SWAP STO- +
       ELSE DROP2
       END
      »
-    \-> \<-N \<-NR
-      « ""
-      1 3 START "M" 1000 \<-NR EVAL NEXT
-      "CM" 900 \<-NR EVAL
-      "D"  500 \<-NR EVAL
-      "CD" 400 \<-NR EVAL
-      1 3 START "C"  100 \<-NR EVAL NEXT
-      "XC"  90 \<-NR EVAL
-      "L"   50 \<-NR EVAL
-      "XL"  40 \<-NR EVAL
-      1 3 START "X"   10 \<-NR EVAL NEXT
-      "IX"   9 \<-NR EVAL
-      "V"    5 \<-NR EVAL
-      "IV"   4 \<-NR EVAL
-      1 3 START "I"    1 \<-NR EVAL NEXT
-      »
-    »
 
 - section: JUSTIF
   fr: Justification de chaîne
   en: String Justification
+  calfr: 12
 
 - fr: |
     Cette routine n'a rien à voir intrinsèquement avec
@@ -611,7 +643,7 @@ calfr: dir
  
     Second case, there are more than <tt>LG</tt> successive characters.
     That means that <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> has been true
-    for some time. So we execute the substitution on the first space, that is ,
+    for some time. So we execute the substitution on the first space, that is,
     when <tt>I&nbsp;I32&nbsp;==</tt> turns true.
 - fr: |
     Et en factorisant, on obtient la condition apparaissant
