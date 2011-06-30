@@ -1,7 +1,9 @@
 fr: Fêtes du calendrier républicain
 en: Feasts of the French Revolutionary calendar
+frf: code
 ---
 - section: FRF
+  frf: 1
 - fr: |
     Il s'agit d'une variable de gros volume, dont le chargement et l'utilisation dans l'outil de conversion
     sont facultatifs. Cette variable fournit pour chaque jour de l'année la «&nbsp;fête&nbsp:»
@@ -27,10 +29,10 @@ en: Feasts of the French Revolutionary calendar
     In some cases, I was not sure of which article to use. I have marked these nouns
     with "4" instead of "0" ("le", masculine) and "5" instead of "1" ("la", feminine).
 - code: |
-    { £VND£ £BRU£ £FRI£
-      £NIV£ £PLU£ £VNT£
-      £GER£ £FLO£ £PRA£
-      £MES£ £THE£ £FRU£ £ADD£
+    { |VND| |BRU| |FRI|
+      |NIV| |PLU| |VNT|
+      |GER| |FLO| |PRA|
+      |MES| |THE| |FRU| |ADD|
     }
 - section: VND
   'fr,en': Vendémiaire
@@ -61,6 +63,11 @@ en: Feasts of the French Revolutionary calendar
     "0pignon"           "0liège"            "1truffe"           "2olive"            "1pelle"
 - section: NIV
   'fr,en': Nivôse
+- fr: |
+    On peut remarquer que pendant ce premier mois de l'hiver, ce ne sont plus les
+    plantes qui sont à l'honneur, mais la géologie.
+- en: |
+    You can notice that during the first winter month, geological terms replace the plants.
 - code: |
     "1tourbe"           "1houille"          "0bitume"           "0soufre"           "0chien"
     "1lave"             "1terre végétale"   "0fumier"           "0salpêtre"         "0fléau"
