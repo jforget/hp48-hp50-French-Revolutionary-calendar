@@ -1,6 +1,7 @@
 fr: Calendriers
 en: Calendars
 calfr: dir
+calfr-dbg: dir
 ---
 - section: 0
   fr: Conversion entre calendriers
@@ -75,19 +76,21 @@ calfr: dir
     For example, you want to know which French Revolutionary date
     corresponds to June 6th, 1944. Just type any of:
 - code: |
-    6,061944 @GRRD@ @RDFR@
-    6,061944 @GRRD@ @RDFR@ @FRABR@
-    6,061944 @GRRD@ @RDFR@ @FRLONG@
+    6,061944 @GRFR@
+    6,061944 @GRFR@ @FRABR@
+    6,061944 @GRFR@ @FRLONG@
 - fr: |
     et vous apprenez qu'il s'agit d'octidi, 18 prairial CLII.
     Selon le cas, vous obtenez le résultat sous forme
     numérique 1520918, sous forme abrégée «&nbsp;18&nbsp;PRA&nbsp;152&nbsp;»
-    ou sous forme longue.
+    ou sous forme longue,
+    «&nbsp;Octidi&nbsp;18&nbsp;Prairial&nbsp;CLII&nbsp;».
 - en: |
     and you learn that it was octidi, 18 prairial CLII.
     Depending on the command you used, you obtain the 
     result as a number, 1520918, as an abbreviated string
-    «&nbsp;18&nbsp;PRA&nbsp;152&nbsp;» or a long string.
+    «&nbsp;18&nbsp;PRA&nbsp;152&nbsp;» or a long string
+    «&nbsp;Octidi&nbsp;18&nbsp;Prairial&nbsp;CLII&nbsp;».
 - fr: |
     La conversion dans l'autre sens nécessite que vous connaissiez
     l'ordre des mois et que vous fassiez de tête la conversion en
@@ -101,7 +104,7 @@ calfr: dir
     you first have to convert «&nbsp;brumaire&nbsp;» into «&nbsp;2&nbsp;»
     and then, you write:
 - code: |
-    1270220 @FRRD@ @RDGR@
+    1270220 @FRGR@
 - fr: |
     et vous obtenez 11,111918, c'est-à-dire le 11&nbsp;novembre 1918.
 - en: |
@@ -136,12 +139,18 @@ calfr: dir
     A last command is @MAINTENANT@ (now), which gives the current day
     and current time in long format.
 - section: 0
+  'fr,en': Installation
+- fr: |
+    À compléter.
+- en: |
+    To be written.
+- section: 0
   fr: Les programmes
   en: The programs
 - section: GRRD
   fr: Conversion de grégorien en  <i lang='la'>Rata Die</i>
   en: Conversion from Gregorian to <i lang='la'>Rata Die</i>
-  calfr: 2
+  calfr-dbg: 10
   level: 3
 - fr: |
     La conversion grégorien \-> RD s'effectue
@@ -181,8 +190,12 @@ calfr: dir
     1515 (this step does not occur if the date to convert is later than 31th December 1599).</li>
     </ul>
 
+- calfr-dbg: 1
+  code: |
+    «
 - code: |
-    « 0 \-> GR RD
+    .
+      0 \-> GR RD
       «
         WHILE GR 100 * FP 10000 * 1600 <
         REPEAT
@@ -191,12 +204,14 @@ calfr: dir
         END 
         1,012001 GR DDAYS RD - |JAN_2001| +
       »
+- calfr-dbg: 1
+  code: |
     »
 
 - section: RDGR
   fr: Conversion de <i lang='la'>Rata Die</i> en grégorien.
   en: Conversion from <i lang='la'>Rata Die</i> into Gregorian.
-  calfr: 5
+  calfr-dbg: 11
   level: 3
 
 - fr: |
@@ -210,8 +225,12 @@ calfr: dir
     date is in 2001 or later, instead of just 1600. It could be modified,
     just change the threshold date.
     
+- calfr-dbg: 1
+  code: |
+    «
 - code: |
-    « \-> J
+    .
+      \-> J
       « 0
         WHILE J |JAN_2001| \<=
         REPEAT 
@@ -222,6 +241,8 @@ calfr: dir
         1,012001 SWAP DATE+
         SWAP -
       »
+- calfr-dbg: 1
+  code: |
     »
 
 - section: JAN_2001
@@ -251,6 +272,7 @@ calfr: dir
   level: 3
   fr: Nombre de jours bissextiles précédant l'année N  du calendrier républicain.
   en: Number of leap days preceding the French Revolutionary year N
+  calfr-dbg: 14
 
 - fr: |
     Jusqu'en l'an 20, les années bissextiles sont calculées pour que le 
@@ -287,11 +309,18 @@ calfr: dir
 - section: FRRD
   fr: Conversion de républicain en <i lang='la'>Rata Die</i>
   en: Conversion from French Revolutionary to <i lang='la'>Rata Die</i>
-  calfr: 4
+  calfr: 12
+  calfr-dbg: 12
   level: 3
 
-- code: |
+- calfr-dbg: 1
+  code: |
+    « \-> F
+- calfr: 1
+  code: |
     « |FRBIS| \-> F FRBIS
+- code: |
+    .
       « F 100 MOD
         F 100 / IP 100 MOD 30 * +
         F 10000 / IP 'F' STO
@@ -302,7 +331,7 @@ calfr: dir
 - section: RDFR
   fr: Conversion de <i lang='la'>Rata Die</i> en républicain
   en: Conversion from <i lang='la'>Rata Die</i> to French Revolutionary
-  calfr: 2
+  calfr-dbg: 13
   level: 3
 
 - fr: |
@@ -339,8 +368,12 @@ calfr: dir
     and the translated date, which gives the number of months and
     the day number in the month.
 
+- calfr-dbg: 1
+  code: |
+    «
 - code: |
-    « 0 \-> J D
+    .
+      0 \-> J D
       «
         J 10100 @FRRD@ -
         365 / IP 10000 *
@@ -353,8 +386,42 @@ calfr: dir
         DUP 30 / IP 100 *
         SWAP 30 MOD + D +
       »
+- calfr-dbg: 1
+  code: |
     »
 
+- section: GRFR
+  fr: Conversion de grégorien en républicain
+  en: Conversion from Gregorian to French Revolutionary
+  calfr: 2
+  calfr-dbg: 2
+  level: 3
+- fr: |
+    Les deux conversions GR \-> RD \-> FR enchaînées
+- en: |
+    The two conversions GR \-> RD \-> FR at once.
+- calfr: 1
+  code: |
+    « |GRRD| |RDFR| »
+- calfr-dbg: 1
+  code: |
+    « @GRRD@ @RDFR@ »
+- section: FRGR
+  fr: Conversion de républicain en grégorien
+  en: Conversion from French Revolutionary to Gregorian
+  calfr: 3
+  calfr-dbg: 3
+  level: 3
+- fr: |
+    Les deux conversions FR \-> RD \-> GR enchaînées
+- en: |
+    The two conversions FR \-> RD \-> GR at once.
+- calfr: 1
+  code: |
+    « @FRRD@ |RDGR| »
+- calfr-dbg: 1
+  code: |
+    « @FRRD@ @RDGR@ »
 - section: 0
   fr: Affichage d'une date du calendrier républicain
   en: Printing a French Revolutionary calendar date
@@ -404,10 +471,17 @@ calfr: dir
 - section: FRLONG
   fr: Date en format long
   en: Long format date
-  calfr: 6
+  calfr: 4
+  calfr-dbg: 4
   level: 3
-- code: |
+- calfr-dbg: 1
+  code: |
+    « \-> D
+- calfr: 1
+  code: |
     « |N10R| \-> D N10R
+- code: |
+    .
       « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
             "Sexti" "Septi" "Octi" "Noni" "Déca" }
         D 1 - 10 MOD 1 + GET "di " +
@@ -433,7 +507,8 @@ calfr: dir
 - section: FRABR
   fr: Date en format abrégé
   en: Abbreviated format date
-  calfr: 7
+  calfr: 5
+  calfr-dbg: 5
   level: 3
 
 - code: |
@@ -450,6 +525,7 @@ calfr: dir
   fr: Date du jour
   en: Current Date
   calfr: 1
+  calfr-dbg: 1
   level: 3
 
 - fr: |
@@ -459,7 +535,7 @@ calfr: dir
     day and time.
 
 - code: |
-    « DATE @GRRD@ @RDFR@ @FRLONG@
+    « DATE @GRFR@ @FRLONG@
     " " + TIME @H24H10@ @PRH10@ + 21 @JUSTIF@ »
 
 - section: 0
@@ -469,7 +545,8 @@ calfr: dir
 - section: H24H10
   'fr,en': Conversion H24 \-> H10
   level: 3
-  calfr: 8
+  calfr: 6
+  calfr-dbg: 6
 
 - fr: |
     La décimalisation des minutes et secondes en fractions
@@ -487,7 +564,8 @@ calfr: dir
 - section: H10H24
   'fr,en': Conversion H10 \-> H24
   level: 3
-  calfr: 9
+  calfr: 7
+  calfr-dbg: 7
 - fr: |
     La fonction inverse de @H24H10@ ci-dessus.
 - en: |
@@ -499,7 +577,8 @@ calfr: dir
 - section: PRH10
   fr: Affichage de l'heure décimale
   en: Printing Decimal Time
-  calfr: 10
+  calfr: 8
+  calfr-dbg: 8
   level: 3
 
 - fr: |
@@ -536,6 +615,7 @@ calfr: dir
   fr: Nombres romains
   en: Roman Numbers
   level: 3
+  calfr-dbg: 15
 
 - fr: |
     L'affichage traditionnel des années du calendrier
@@ -546,10 +626,15 @@ calfr: dir
     Traditionally, the years of the French calendar
     are written with Roman numerals. Here is the conversion function.
 
-- code: |
+- calfr: 1
+  code: |
     « 
-      |NR|
-    \-> \<-N NR
+      |NR| \-> \<-N NR
+- calfr-dbg: 1
+  code: |
+    « \-> \<-N
+- code: |
+    .
       « ""
       1 3 START "M" 1000 @NR@ NEXT
       "CM" 900 @NR@
@@ -569,6 +654,7 @@ calfr: dir
 
 - section: NR
   level: 4
+  calfr-dbg: 16
 
 - fr: |
     Le sous-programme <tt>NR</tt> a pour but
@@ -597,7 +683,8 @@ calfr: dir
 - section: JUSTIF
   fr: Justification de chaîne
   en: String Justification
-  calfr: 12
+  calfr: 9
+  calfr-dbg: 9
 
 - fr: |
     Cette routine n'a rien à voir intrinsèquement avec
