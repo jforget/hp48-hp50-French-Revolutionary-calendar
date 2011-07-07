@@ -142,10 +142,69 @@ subsg: code
     and current time in long format.
 - section: 0
   'fr,en': Installation
+- section: 0
+  fr: Installation avec une carte SD
+  en: Installation with a SD card
+  level: 3
 - fr: |
-    À compléter.
+    Tout d'abord, il faut positionner le drapeau -51, pour que le délimiteur
+    de la partie décimale soit la virgule et non pas le point.
+
+    Sur le PC, copiez les fichiers <tt>subsg</tt>, <tt>cvtcar</tt>,
+    l'un des fichiers <tt>calfr</tt> ou <tt>calfr-dbg</tt> sur la
+    carte SD. Éventuellement, il faut copier le fichier <tt>frf</tt>,
+    mais ce n'est pas obligatoire.
 - en: |
-    To be written.
+    First, the -51 flag must be set, so the character separating the
+    fractional part from the integer part will be the comma.
+
+    On the PC, copy the following files: <tt>subsg</tt>, <tt>cvtcar</tt>,
+    either <tt>calfr</tt> or <tt>calfr-dbg</tt> to the SD card.
+    The <tt>frf</tt> file may be copied also, but this is not required.
+- fr: |
+    Débranchez la carte SD du PC et branchez-la sur la HP-50.
+    Copiez les fichiers vers la HP-50.
+- en: |
+    Unplug the SD card from the PC and plug it into the HP-50.
+    Copy the files to the HP-50.
+- fr: |
+    Passez en mode édition sur @SUBSG@. Sur la deuxième ligne, remplacez
+    la chaîne <tt>"\\->"</tt> par une flèche <tt>\-></tt>
+    (shift-droit zéro). Sauvegardez. Puis convertissez
+    la chaîne en programme (PRG TYPE OBJ\-> ou bien shift-gauche N E A).
+    Stockez le résultat dans @SUBSG@.
+    Convertissez de même @CVTCAR@ par PRG TYPE OBJ\-> ou bien shift-gauche N E A.
+    Puis stockez le récultat dans @CVTCAR@.
+    Il n'y a pas besoin de remplacer une chaîne par une flèche.
+- en: |
+    Edit the content of @SUBSG@. On the second line, replace the
+    <tt>"\\->"</tt> string by an arrow <tt>\-></tt> (right-shift zero).
+    Save. Then convert it to a program (PRG TYPE OBJ\-> or left-shift N E A).
+    Store the result into @SUBSG@.
+    Convert also @CVTCAR@ with PRG TYPE OBJ\-> or left-shift N E A.
+    Store the result into @CVTCAR@. No need to replace a substring with an arrow.
+- fr: |
+    Pour CALFR ou CALFR-DBG, il y a de nombreuses sous-chaînes à remplacer
+    par des flèches ou d'autres caractères spéciaux. Pour ce faire, 
+    chargez la chaîne au niveau 1 de la pile et lancez @CVTCAR@.
+    Convertissez la chaîne en objet (PRG TYPE OBJ\-> ou bien shift-gauche N E A).
+    Puis stockez le résultat dans un nom de répertoire à votre guise.
+- en: |
+    For CALFR or CALFR-DBG, there are many substrings to replace with special 
+    characters. To do this, just load the string in the stack, level 1,
+    and execture @CVTCAR@. Then, convert the string into an object
+    (PRG TYPE OBJ\-> or left-shift N E A). Last, store the result in a
+    directory name you choose.
+- fr: |
+    Si vous avez chargé le fichier <tt>frf</tt>, faites de même avec la chaîne
+    FRF&nbsp;: chargez-la dans la pile, appliquez-lui @CVTCAR@, convertissez
+    en objet et stockez le résultat dans la variable FRF. Déplacez cette
+    variable vers le répertoire créé précédemment.
+- en: |
+    If you have copied the <tt>frf</tt> file, do the same procedure with 
+    the FRF string: load into the stack, level 1, run @CVTCAR@, convert
+    into an object and store the result into the FRF variable. Move this
+    variable into the directory just created.
 - section: 0
   fr: Les programmes
   en: The programs
