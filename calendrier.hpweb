@@ -2,6 +2,8 @@ fr: Calendriers
 en: Calendars
 calfr: dir
 calfr-dbg: dir
+cvtcar: code
+subsg: code
 ---
 - section: 0
   fr: Conversion entre calendriers
@@ -772,6 +774,64 @@ calfr-dbg: dir
        NEXT
        CH
       »
+    »
+- section: SUBSG
+  fr: Substitution globale
+  en: Global Substitution
+  subsg: 1
+- fr: |
+    Cette fonction permet d'effectuer une substitution globale
+    sur une chaîne pour remplacer une séquence avec un backslash
+    <tt>"\\->"</tt> par exemple, par le caractère correspondant
+    <tt>\-></tt>. En entrée, la chaîne traitée au niveau 3, la séquence
+    sans le backslash au niveau 2 (<tt>"->"</tt> dans l'exemple ci-dessus)
+    et le code ASCII au niveau 1 (141 dans l'exemple).
+- en: |
+    This function performs a global substitution on a string, to replace
+    a backslash-string, <tt>"\\->"</tt> for example, by the corresponding character
+    <tt>\-></tt>. In input, the processed string at level 3, the replaced sequence
+    without backslash at level 2 (<tt>"->"</tt> for the example above)
+    and the ASCII code at level 1 (141 for the same example).
+- code: |
+    « 92 CHR ROT + SWAP CHR
+      \-> ch av ap
+      « WHILE ch av POS
+        REPEAT
+          ch 1 OVER av POS 1 - SUB
+          ap +
+          ch DUP av POS av SIZE +
+          OVER SIZE SUB +
+          'ch' STO
+        END ch
+      »
+    »
+- section: CVTCAR
+  fr: Conversion de caractères
+  en: Character Conversion
+  cvtcar: 1
+- fr: |
+    Cette fonction remplace la conversion automatique effectuée par
+    Conn4x, en remplaçant les séquences avec un backslash par les caractères
+    correspondants. De plus, elle enlève la première ligne <tt>%HPHP</tt>
+    qui a l'air de déranger la calculatrice.
+- en: |
+    This function replaces the automatic conversion which occurs
+    when using Conn4x. It substitutes backslash-sequences with the corresponding
+    special character. In addition, it removes the first line <tt>%HPHP</tt>
+    which seems to bother the computer.
+- code: |
+    « 
+      "<-" 142 @SUBSG@
+      "->" 141 @SUBSG@
+      "<=" 137 @SUBSG@
+      ">=" 138 @SUBSG@
+      "=/" 139 @SUBSG@
+      IF DUP "%%HP" POS
+      THEN
+        DUP 10 CHR POS 1 +
+        OVER SIZE
+        SUB
+      END
     »
 
 - section: 0
