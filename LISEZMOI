@@ -11,8 +11,10 @@ de l'heure.
 hpcalc.org
 ----------
 
-Pas d'instructions d'installation pour l'instant.
-Le programme n'est même pas disponible sur ce site.
+Dézippez le fichier que vous avez téléchargé et
+consultez le fichier calendrier.fr.html dans
+un navigateur HTML. Vous y trouverez la suite
+des instructions d'installation.
 
 github.org
 ----------
@@ -25,10 +27,20 @@ dépôt Git Hub.
 
 https://github.com/jforget/perl-literate-prog-HP48-HP50
 
-NB: cet outil est en cours de développement. Vérifiez
-que vous avez la dernière version.
+Ce n'est pas un outil à installer sur la calculatrice HP,
+mais sur un ordinateur (PC ou autre). Il faut avoir
+également sur cet ordinateur Graphviz, Perl ainsi
+que les modules YAML.pm et GraphViz.pm.
 
-En attendant, vous pouvez générer le fichier HTML et
-recopier (à la main !) le contenu vers votre calculateur
-HP, puis deviner le mode d'emploi du logiciel.
+http://www.graphviz.org/
+http://www.perl.org/
+http://search.cpan.org/dist/YAML/
+http://search.cpan.org/dist/GraphViz/
 
+Une fois tout ceci installé, lancez la commande
+
+genere-hpweb calendrier
+
+Cela génère plusieurs fichiers, dont calendrier.fr.html.
+La suite de l'installation est expliquée dans ce fichier.
+Vous pouvez le lire dans un navigateur web.
