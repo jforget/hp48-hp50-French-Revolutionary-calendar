@@ -548,7 +548,7 @@ subsg: code
       « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
             "Sexti" "Septi" "Octi" "Noni" "Déca" }
         D 1 - 10 MOD 1 + GET "di " +
-        D 100 MOD + " " +
+        D 100 |MOD| + " " +
         { "Vendémiaire" "Brumaire" "Frimaire"
           "Nivôse" "Pluviôse" "Ventôse"
           "Germinal" "Floréal" "Prairial"
@@ -576,14 +576,47 @@ subsg: code
 
 - code: |
     « \-> D
-      « D 100 MOD " " +
+      « D 100 |MOD| " " +
         { "VND" "BRU" "FRI" "NIV" "PLU" "VNT"
         "GER" "FLO" "PRA" "MES" "THE" "FRU" "S-C" }
         D 100 / IP 100 MOD GET +
-        " " + D 10000 / IP +
+        " " + D 10000 / |IP| +
       »
     »
-
+- section: IP
+  fr: Partie entière
+  en: Integer Part
+- fr: |
+    Sur les HP-50, lorsque l'on prend la partie entière d'un nombre
+    réel, on n'obtient pas un nombre entier, on obtient un nombre réel
+    avec une partie décimale nulle. Converti en chaîne, il conserve
+    la virgule décimale. Pour éviter cela, il faut utiliser la fonction
+    <tt>R\->I</tt>. En revanche, sur les HP-48, la partie entière
+    donne un nombre entier, qui n'a pas de virgule lorsqu'on le convertit
+    en chaîne. Et sur les HP-48, la fonction <tt>R\->I</tt> n'existe pas.
+- en: |
+    On the HP-50 calculators, taking the integer part of a real number
+    does not give an integer number, but a real number, the fractional
+    part of which is zero. And when converted to a string, this number
+    keeps its decimal comma. To prevent this, we have to use the
+    <tt>R\->I</tt> function. On the other side, on HP-48's, the integer
+    part of a real number is an integer, which has no comma when converted
+    to a string. In addition, the <tt>R\->I</tt> function does not exist
+    on HP-48's.
+- code: IP R\->I
+  'calfr-50,calfr-dbg-50': 1
+- code: IP
+  'calfr-48,calfr-dbg-48': 1
+- section: MOD
+  'fr,en': Modulo
+- fr: |
+    Idem pour la fonction modulo.
+- en: |
+    Same thing for the modulus function
+- code: MOD R\->I
+  'calfr-50,calfr-dbg-50': 1
+- code: MOD
+  'calfr-48,calfr-dbg-48': 1
 - section: MAINTENANT
   fr: Date du jour
   en: Current Date
@@ -657,13 +690,13 @@ subsg: code
     mind having single-digit hours until "9:59:59", instead
     of "09:59:59".
 - code: |
-    «  DUP IP ":" +
-      SWAP FP 100 * DUP IP
+    «  DUP |IP| ":" +
+      SWAP FP 100 * DUP |IP|
       IF DUP 9 \<=
       THEN "0" SWAP +
       END
       ":" + 
-      SWAP FP 100 * IP
+      SWAP FP 100 * |IP|
       IF DUP 9 \<=
       THEN "0" SWAP +
       END
