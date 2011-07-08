@@ -2,8 +2,7 @@
 *.html
 *.png
 gener
-calfr
-calfr-dbg
+calfr*
 frf
 cvtcar
 subsg

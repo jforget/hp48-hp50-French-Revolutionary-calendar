@@ -1,7 +1,9 @@
 fr: Calendriers
 en: Calendars
-calfr: dir
-calfr-dbg: dir
+calfr-48: dir
+calfr-dbg-48: dir
+calfr-50: dir
+calfr-dbg-50: dir
 cvtcar: code
 subsg: code
 ---
@@ -211,7 +213,7 @@ subsg: code
 - section: GRRD
   fr: Conversion de grégorien en  <i lang='la'>Rata Die</i>
   en: Conversion from Gregorian to <i lang='la'>Rata Die</i>
-  calfr-dbg: 10
+  'calfr-dbg-48,calfr-dbg-50': 10
   level: 3
 - fr: |
     La conversion grégorien \-> RD s'effectue
@@ -251,9 +253,9 @@ subsg: code
     1515 (this step does not occur if the date to convert is later than 31th December 1599).</li>
     </ul>
 
-- calfr-dbg: 1
-  code: |
+- code: |
     «
+  'calfr-dbg-48,calfr-dbg-50': 1
 - code: |
     .
       0 \-> GR RD
@@ -265,14 +267,14 @@ subsg: code
         END 
         1,012001 GR DDAYS RD - |JAN_2001| +
       »
-- calfr-dbg: 1
-  code: |
+- code: |
     »
+  'calfr-dbg-48,calfr-dbg-50': 1
 
 - section: RDGR
   fr: Conversion de <i lang='la'>Rata Die</i> en grégorien.
   en: Conversion from <i lang='la'>Rata Die</i> into Gregorian.
-  calfr-dbg: 11
+  'calfr-dbg-48,calfr-dbg-50': 11
   level: 3
 
 - fr: |
@@ -286,9 +288,9 @@ subsg: code
     date is in 2001 or later, instead of just 1600. It could be modified,
     just change the threshold date.
     
-- calfr-dbg: 1
-  code: |
+- code: |
     «
+  'calfr-dbg-48,calfr-dbg-50': 1
 - code: |
     .
       \-> J
@@ -302,9 +304,9 @@ subsg: code
         1,012001 SWAP DATE+
         SWAP -
       »
-- calfr-dbg: 1
-  code: |
+- code: |
     »
+  'calfr-dbg-48,calfr-dbg-50': 1
 
 - section: JAN_2001
   level: 4
@@ -333,7 +335,7 @@ subsg: code
   level: 3
   fr: Nombre de jours bissextiles précédant l'année N  du calendrier républicain.
   en: Number of leap days preceding the French Revolutionary year N
-  calfr-dbg: 14
+  'calfr-dbg-48,calfr-dbg-50': 14
 
 - fr: |
     Jusqu'en l'an 20, les années bissextiles sont calculées pour que le 
@@ -370,16 +372,16 @@ subsg: code
 - section: FRRD
   fr: Conversion de républicain en <i lang='la'>Rata Die</i>
   en: Conversion from French Revolutionary to <i lang='la'>Rata Die</i>
-  calfr: 12
-  calfr-dbg: 12
+  'calfr-48,calfr-50': 12
+  'calfr-dbg-48,calfr-dbg-50': 12
   level: 3
 
-- calfr-dbg: 1
-  code: |
+- code: |
     « \-> F
-- calfr: 1
-  code: |
+  'calfr-dbg-48,calfr-dbg-50': 1
+- code: |
     « |FRBIS| \-> F FRBIS
+  'calfr-48,calfr-50': 1
 - code: |
     .
       « F 100 MOD
@@ -392,7 +394,7 @@ subsg: code
 - section: RDFR
   fr: Conversion de <i lang='la'>Rata Die</i> en républicain
   en: Conversion from <i lang='la'>Rata Die</i> to French Revolutionary
-  calfr-dbg: 13
+  'calfr-dbg-48,calfr-dbg-50': 13
   level: 3
 
 - fr: |
@@ -429,9 +431,9 @@ subsg: code
     and the translated date, which gives the number of months and
     the day number in the month.
 
-- calfr-dbg: 1
-  code: |
+- code: |
     «
+  'calfr-dbg-48,calfr-dbg-50': 1
 - code: |
     .
       0 \-> J D
@@ -447,42 +449,42 @@ subsg: code
         DUP 30 / IP 100 *
         SWAP 30 MOD + D +
       »
-- calfr-dbg: 1
-  code: |
+- code: |
     »
+  'calfr-dbg-48,calfr-dbg-50': 1
 
 - section: GRFR
   fr: Conversion de grégorien en républicain
   en: Conversion from Gregorian to French Revolutionary
-  calfr: 2
-  calfr-dbg: 2
+  'calfr-48,calfr-50': 2
+  'calfr-dbg-48,calfr-dbg-50': 2
   level: 3
 - fr: |
     Les deux conversions GR \-> RD \-> FR enchaînées
 - en: |
     The two conversions GR \-> RD \-> FR at once.
-- calfr: 1
-  code: |
+- code: |
     « |GRRD| |RDFR| »
-- calfr-dbg: 1
-  code: |
+  'calfr-48,calfr-50': 1
+- code: |
     « @GRRD@ @RDFR@ »
+  'calfr-dbg-48,calfr-dbg-50': 1
 - section: FRGR
   fr: Conversion de républicain en grégorien
   en: Conversion from French Revolutionary to Gregorian
-  calfr: 3
-  calfr-dbg: 3
+  'calfr-48,calfr-50': 3
+  'calfr-dbg-48,calfr-dbg-50': 3
   level: 3
 - fr: |
     Les deux conversions FR \-> RD \-> GR enchaînées
 - en: |
     The two conversions FR \-> RD \-> GR at once.
-- calfr: 1
-  code: |
+- code: |
     « @FRRD@ |RDGR| »
-- calfr-dbg: 1
-  code: |
+  'calfr-48,calfr-50': 1
+- code: |
     « @FRRD@ @RDGR@ »
+  'calfr-dbg-48,calfr-dbg-50': 1
 - section: 0
   fr: Affichage d'une date du calendrier républicain
   en: Printing a French Revolutionary calendar date
@@ -532,15 +534,15 @@ subsg: code
 - section: FRLONG
   fr: Date en format long
   en: Long format date
-  calfr: 4
-  calfr-dbg: 4
+  'calfr-48,calfr-50': 4
+  'calfr-dbg-48,calfr-dbg-50': 4
   level: 3
-- calfr-dbg: 1
-  code: |
+- code: |
     « \-> D
-- calfr: 1
-  code: |
+  'calfr-dbg-48,calfr-dbg-50': 1
+- code: |
     « |N10R| \-> D N10R
+  'calfr-48,calfr-50': 1
 - code: |
     .
       « { "Primi" "Duo" "Tri" "Quarti" "Quinti"
@@ -568,8 +570,8 @@ subsg: code
 - section: FRABR
   fr: Date en format abrégé
   en: Abbreviated format date
-  calfr: 5
-  calfr-dbg: 5
+  'calfr-48,calfr-50': 5
+  'calfr-dbg-48,calfr-dbg-50': 5
   level: 3
 
 - code: |
@@ -585,8 +587,8 @@ subsg: code
 - section: MAINTENANT
   fr: Date du jour
   en: Current Date
-  calfr: 1
-  calfr-dbg: 1
+  'calfr-48,calfr-50': 1
+  'calfr-dbg-48,calfr-dbg-50': 1
   level: 3
 
 - fr: |
@@ -606,8 +608,8 @@ subsg: code
 - section: H24H10
   'fr,en': Conversion H24 \-> H10
   level: 3
-  calfr: 6
-  calfr-dbg: 6
+  'calfr-48,calfr-50': 6
+  'calfr-dbg-48,calfr-dbg-50': 6
 
 - fr: |
     La décimalisation des minutes et secondes en fractions
@@ -625,8 +627,8 @@ subsg: code
 - section: H10H24
   'fr,en': Conversion H10 \-> H24
   level: 3
-  calfr: 7
-  calfr-dbg: 7
+  'calfr-48,calfr-50': 7
+  'calfr-dbg-48,calfr-dbg-50': 7
 - fr: |
     La fonction inverse de @H24H10@ ci-dessus.
 - en: |
@@ -638,8 +640,8 @@ subsg: code
 - section: PRH10
   fr: Affichage de l'heure décimale
   en: Printing Decimal Time
-  calfr: 8
-  calfr-dbg: 8
+  'calfr-48,calfr-50': 8
+  'calfr-dbg-48,calfr-dbg-50': 8
   level: 3
 
 - fr: |
@@ -676,7 +678,7 @@ subsg: code
   fr: Nombres romains
   en: Roman Numbers
   level: 3
-  calfr-dbg: 15
+  'calfr-dbg-48,calfr-dbg-50': 15
 
 - fr: |
     L'affichage traditionnel des années du calendrier
@@ -687,13 +689,13 @@ subsg: code
     Traditionally, the years of the French calendar
     are written with Roman numerals. Here is the conversion function.
 
-- calfr: 1
-  code: |
+- code: |
     « 
       |NR| \-> \<-N NR
-- calfr-dbg: 1
-  code: |
+  'calfr-48,calfr-50': 1
+- code: |
     « \-> \<-N
+  'calfr-dbg-48,calfr-dbg-50': 1
 - code: |
     .
       « ""
@@ -715,7 +717,7 @@ subsg: code
 
 - section: NR
   level: 4
-  calfr-dbg: 16
+  'calfr-dbg-48,calfr-dbg-50': 16
 
 - fr: |
     Le sous-programme <tt>NR</tt> a pour but
@@ -744,8 +746,8 @@ subsg: code
 - section: JUSTIF
   fr: Justification de chaîne
   en: String Justification
-  calfr: 9
-  calfr-dbg: 9
+  'calfr-48,calfr-50': 9
+  'calfr-dbg-48,calfr-dbg-50': 9
 
 - fr: |
     Cette routine n'a rien à voir intrinsèquement avec
