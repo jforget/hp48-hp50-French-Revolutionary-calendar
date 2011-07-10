@@ -6,7 +6,7 @@ frf: code
   frf: 1
 - fr: |
     Il s'agit d'une variable de gros volume, dont le chargement et l'utilisation dans l'outil de conversion
-    sont facultatifs. Cette variable fournit pour chaque jour de l'année la «&nbsp;fête&nbsp:»
+    sont facultatifs. Cette variable fournit pour chaque jour de l'année la «&nbsp;fête&nbsp;»
     du jour.
 
     Le premier caractère permet de savoir quel article il faut appliquer au mot qui
