@@ -145,6 +145,36 @@ subsg: code
 - section: 0
   'fr,en': Installation
 - section: 0
+  fr: Quels fichiers faut-il installer
+  en: Which files must be installed
+  level: 3
+- fr: |
+    Si vous utilisez une carte SD, ou bien dans le cas d'un glisser-déposer
+    sur un émulateur comme «&nbsp;emu48&nbsp;», alors vous aurez besoin
+    de @SUBSG@ et de @CVTCAR@. Si vous utilisez le logiciel de connexion
+    «&nbsp;conn4x&nbsp;», ces deux programmes sont inutiles, le logiciel 
+    de connexion prenant à sa charge les transformations.
+- en: |
+    If you use a SD card, or if you drag-and-drop into an emulator such
+    as "emu48", you will need @SUBSG@ and @CVTCAR@. If you use a connection
+    software such as "con4x", this software performs the transformations
+    processed by @SUBSG@ and @CVTCAR@.
+- fr: |
+    Pour les fichiers en «&nbsp;48&nbsp;» et en «&nbsp;50&nbsp;», essayez
+    d'abord ces quelques commandes. Tapez un nombre avec une partie décimale,
+    comme «&nbsp;1,5&nbsp;». Prenez la partie entière (<tt>IP</tt>) puis
+    convertissez en chaîne (<tt>\->STR</tt>). Si vous obtenez une chaîne
+    sans virgule, (<tt>"1"</tt> dans l'exemple), utilisez les fichiers en
+    48. Si vous obtenez une chaîne avec une virgule (<tt>"1,"</tt>)
+    alors vous devrez utiliser les fichier en «&nbsp;50&nbsp;».
+- en: |
+    About files ending in "48" and "50": first try this experiment.
+    Type a number with a fractional part (<tt>1.5</tt> for example). Then 
+    extract its integer part with <tt>IP</tt> and convert into a 
+    string with <tt>\->STR</tt>. If the result is a comma-less string
+    (<tt>"1"</tt> in the example above), use the 48-ending files.
+    If the result includes a comma (<tt>1,</tt>), use the 50-ending files.
+- section: 0
   fr: Installation avec une carte SD
   en: Installation with a SD card
   level: 3
