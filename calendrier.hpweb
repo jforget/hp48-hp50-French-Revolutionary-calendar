@@ -157,8 +157,8 @@ subsg: code
 - en: |
     If you use a SD card, or if you drag-and-drop into an emulator such
     as "emu48", you will need @SUBSG@ and @CVTCAR@. If you use a connection
-    software such as "con4x", this software performs the transformations
-    processed by @SUBSG@ and @CVTCAR@.
+    software such as "conn4x", this software performs the transformations
+    processed by @SUBSG@ and @CVTCAR@ so you do not need to install them.
 - fr: |
     Pour les fichiers en «&nbsp;48&nbsp;» et en «&nbsp;50&nbsp;», essayez
     d'abord ces quelques commandes. Tapez un nombre avec une partie décimale,
@@ -174,6 +174,31 @@ subsg: code
     string with <tt>\->STR</tt>. If the result is a comma-less string
     (<tt>"1"</tt> in the example above), use the 48-ending files.
     If the result includes a comma (<tt>1,</tt>), use the 50-ending files.
+- fr: |
+    Les fichiers <tt>calfr-dbg-48</tt> et <tt>calfr-dbg-50</tt> comportent 16
+    entrées de menu, ce qui vous permet de tester séparément chaque programme. 
+    À l'inverse, les fichiers <tt>calfr-48</tt> et <tt>calfr-50</tt> ne comportent
+    que les 10 entrées de menu indispensables, les autres programmes étant stockés
+    dans des variables locales des 10 premiers programmes. Avec ces deux
+    fichiers, le menu <tt>VAR</tt> est moins encombré.
+- en: |
+    The files <tt>calfr-dbg-48</tt> and <tt>calfr-dbg-50</tt> contain 16
+    menu entries, which allow you to examine separately all programs.
+    On the other side, the files <tt>calfr-48</tt> and <tt>calfr-50</tt>
+    contain only the 10 necessary directory entries, some programs being
+    stored in other programs' local variables, so the <tt>VAR</tt> menu
+    is less cluttered.
+- fr: |
+    Vous pouvez charger le fichier <tt>frf</tt> ou le laisser de côté.
+    Si vous n'utilisez pas ce fichier, le répertoire contenant les 
+    programmes de conversion occuperont moins de 2800 octets. Si vous
+    incluez le fichier <tt>frf</tt>, cela ajoutera 4758 octets.
+    Tout dépend de la place disponible sur votre calculatrice.
+- en: |
+    You can install the <tt>frf</tt> file or not. If you do not 
+    install it, the directory with the conversion programs will 
+    use less than 2800 bytes. Using <tt>frf</tt> will add 4758
+    bytes. All depends on the available space on your HP computer.
 - section: 0
   fr: Installation avec une carte SD
   en: Installation with a SD card
@@ -183,7 +208,8 @@ subsg: code
     de la partie décimale soit la virgule et non pas le point.
 
     Sur le PC, copiez les fichiers <tt>subsg</tt>, <tt>cvtcar</tt>,
-    l'un des fichiers <tt>calfr</tt> ou <tt>calfr-dbg</tt> sur la
+    l'un des fichiers <tt>calfr-48</tt>, <tt>calfr-dbg-48</tt>,
+    <tt>calfr-50</tt> ou <tt>calfr-dbg-50</tt> sur la
     carte SD. Éventuellement, il faut copier le fichier <tt>frf</tt>,
     mais ce n'est pas obligatoire.
 - en: |
@@ -191,10 +217,11 @@ subsg: code
     fractional part from the integer part will be the comma.
 
     On the PC, copy the following files: <tt>subsg</tt>, <tt>cvtcar</tt>,
-    either <tt>calfr</tt> or <tt>calfr-dbg</tt> to the SD card.
+    either <tt>calfr-48</tt>, <tt>calfr-dbg-48</tt>, <tt>calfr-50</tt>
+    or <tt>calfr-dbg</tt> to the SD card.
     The <tt>frf</tt> file may be copied also, but this is not required.
 - fr: |
-    Débranchez la carte SD du PC et branchez-la sur la HP-50.
+    Retirez la carte SD du PC et insérez-la dans la HP-50.
     Copiez les fichiers vers la HP-50.
 - en: |
     Unplug the SD card from the PC and plug it into the HP-50.
