@@ -313,6 +313,10 @@ subsg: code
     À noter que l'un des avantages du 1<sup>er</sup> janvier 2001 est
     qu'il s'écrit de façon indépendante du flag -42. C'est
     1,012001 aussi bien en JJ,MMAAAA qu'en MM,JJAAAA.
+
+    Cette fonction est une fonction indépendante dans le cas des fichiers
+    <tt>calfr-dbg-</tt><var>nn</var>, mais elle est intégrée à @GRFR@ dans
+    le cas des fichiers <tt>calfr-</tt><var>nn</var>.
 - en: |
     The Gregorian \-> RD conversion is processed in two or three steps.
     Let us take, for example, the 13th September 1515 in the Gregorian
@@ -329,6 +333,9 @@ subsg: code
     1515 (this step does not occur if the date to convert is later than 31th December 1599).</li>
     </ul>
 
+    This function is a standalone function when provided by the 
+    <tt>calfr-dbg-</tt><var>nn</var> files, but it is included into
+    @GRFR@ when provided by the <tt>calfr-</tt><var>nn</var> files.
 - code: |
     «
   'calfr-dbg-48,calfr-dbg-50': 1
@@ -406,7 +413,6 @@ subsg: code
 
 - code: |
     730486
-
 - section: FRBIS
   level: 3
   fr: Nombre de jours bissextiles précédant l'année N  du calendrier républicain.
@@ -451,7 +457,12 @@ subsg: code
   'calfr-48,calfr-50': 12
   'calfr-dbg-48,calfr-dbg-50': 12
   level: 3
-
+- fr: |
+    Cette fonction est indépendante, y compris dans le cas des fichiers
+    <tt>calfr-</tt><var>nn</var>, car elle est appelée par @RDFR@ (ou @RDGR@).
+- en: |
+    This function is a standalone function, even when provided by the
+    <tt>calfr-</tt><var>nn</var>, because it is called by @RDFR@ (or @RDGR@).
 - code: |
     « \-> F
   'calfr-dbg-48,calfr-dbg-50': 1
@@ -984,11 +995,18 @@ subsg: code
     Conn4x, en remplaçant les séquences avec un backslash par les caractères
     correspondants. De plus, elle enlève la première ligne <tt>%HPHP</tt>
     qui a l'air de déranger la calculatrice.
+
+    Les trigrammes remplacés sont ceux qui figurent dans <tt>calfr*</tt>, mais
+    il est possible d'en ajouter d'autres s'il y a besoin.
 - en: |
     This function replaces the automatic conversion which occurs
     when using Conn4x. It substitutes backslash-sequences with the corresponding
     special character. In addition, it removes the first line <tt>%HPHP</tt>
     which seems to bother the computer.
+
+    The function replaces only five different trigrams. These are the trigrams
+    used in <tt>calfr*</tt>, but if the need arises, you can add other trigrams
+    to be replaced.
 - code: |
     « 
       "<-" 142 @SUBSG@
@@ -1003,7 +1021,6 @@ subsg: code
         SUB
       END
     »
-
 - section: 0
   fr: Licence
   en: License
