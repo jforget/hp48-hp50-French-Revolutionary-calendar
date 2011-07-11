@@ -230,7 +230,8 @@ subsg: code
     Passez en mode édition sur @SUBSG@. Sur la deuxième ligne, remplacez
     la chaîne <tt>"\\->"</tt> par une flèche <tt>\-></tt>
     (shift-droit zéro). Sauvegardez. Puis convertissez
-    la chaîne en programme (PRG TYPE OBJ\-> ou bien shift-gauche N E A).
+    la chaîne en programme (PRG TYPE OBJ\-> ou bien shift-gauche N E A sur
+    la HP-50, ou H C A sur la HP-48).
     Stockez le résultat dans @SUBSG@.
     Convertissez de même @CVTCAR@ par PRG TYPE OBJ\-> ou bien shift-gauche N E A.
     Puis stockez le récultat dans @CVTCAR@.
@@ -238,9 +239,10 @@ subsg: code
 - en: |
     Edit the content of @SUBSG@. On the second line, replace the
     <tt>"\\->"</tt> string by an arrow <tt>\-></tt> (right-shift zero).
-    Save. Then convert it to a program (PRG TYPE OBJ\-> or left-shift N E A).
+    Save. Then convert it to a program (PRG TYPE OBJ\-> or left-shift N E A
+    on the HP-50, or H C A on the HP-48).
     Store the result into @SUBSG@.
-    Convert also @CVTCAR@ with PRG TYPE OBJ\-> or left-shift N E A.
+    Convert also @CVTCAR@ with PRG TYPE OBJ\->.
     Store the result into @CVTCAR@. No need to replace a substring with an arrow.
 - fr: |
     Pour CALFR ou CALFR-DBG, il y a de nombreuses sous-chaînes à remplacer
