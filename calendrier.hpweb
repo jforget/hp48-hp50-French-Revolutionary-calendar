@@ -166,7 +166,7 @@ subsg: code
     convertissez en chaîne (<tt>\->STR</tt>). Si vous obtenez une chaîne
     sans virgule, (<tt>"1"</tt> dans l'exemple), utilisez les fichiers en
     48. Si vous obtenez une chaîne avec une virgule (<tt>"1,"</tt>)
-    alors vous devrez utiliser les fichier en «&nbsp;50&nbsp;».
+    alors vous devrez utiliser les fichiers en «&nbsp;50&nbsp;».
 - en: |
     About files ending in "48" and "50": first try this experiment.
     Type a number with a fractional part (<tt>1.5</tt> for example). Then 
@@ -203,69 +203,86 @@ subsg: code
   fr: Installation avec une carte SD
   en: Installation with a SD card
   level: 3
+- section: 0
+  fr: Première étape
+  en: First Step
+  level: 4
 - fr: |
     Tout d'abord, il faut positionner le drapeau -51, pour que le délimiteur
     de la partie décimale soit la virgule et non pas le point.
-
-    Sur le PC, copiez les fichiers <tt>subsg</tt>, <tt>cvtcar</tt>,
-    l'un des fichiers <tt>calfr-48</tt>, <tt>calfr-dbg-48</tt>,
-    <tt>calfr-50</tt> ou <tt>calfr-dbg-50</tt> sur la
-    carte SD. Éventuellement, il faut copier le fichier <tt>frf</tt>,
-    mais ce n'est pas obligatoire.
 - en: |
     First, the -51 flag must be set, so the character separating the
     fractional part from the integer part will be the comma.
-
-    On the PC, copy the following files: <tt>subsg</tt>, <tt>cvtcar</tt>,
-    either <tt>calfr-48</tt>, <tt>calfr-dbg-48</tt>, <tt>calfr-50</tt>
-    or <tt>calfr-dbg</tt> to the SD card.
-    The <tt>frf</tt> file may be copied also, but this is not required.
+- section: 0
+  fr: Copie de <tt>subsg</tt>
+  en: Copy of <tt>subsg</tt>
+  level: 4
 - fr: |
-    Retirez la carte SD du PC et insérez-la dans la HP-50.
-    Copiez les fichiers vers la HP-50.
+    Chargez le fichier <tt>subsg</tt> sur la calculatrice, ce qui
+    donne une chaîne dans la pile. Passez en mode édition sur cette
+    chaîne. Sur la deuxième ligne, remplacez la chaîne <tt>"\\->"</tt>
+    par une flèche <tt>\-></tt> (shift-droit zéro). Quittez l'édition
+    en sauvegardant vos modifications. Puis convertissez la chaîne en
+    programme (<tt>PRG TYPE OBJ\-></tt> ou bien shift-gauche N E A sur
+    la HP-50, ou H C A sur la HP-48).  Stockez le résultat dans
+    @SUBSG@.
 - en: |
-    Unplug the SD card from the PC and plug it into the HP-50.
-    Copy the files to the HP-50.
+    Copy the <tt>subsg</tt> file to the HP calculator, which gives a
+    string on the stack.  Edit the content of this string. On the
+    second line, replace the <tt>"\\->"</tt> string by an
+    arrow <tt>\-></tt> (right-shift zero). Quit the editor and save
+    your edits. Then convert the string to a program (<tt>PRG TYPE
+    OBJ\-></tt> or left-shift N E A on the HP-50, or H C A on the
+    HP-48). Store the result into @SUBSG@.
+- section: 0
+  fr: Copie de <tt>cvtcar</tt>
+  en: Copy of <tt>cvtcar</tt>
+  level: 4
 - fr: |
-    Passez en mode édition sur @SUBSG@. Sur la deuxième ligne, remplacez
-    la chaîne <tt>"\\->"</tt> par une flèche <tt>\-></tt>
-    (shift-droit zéro). Sauvegardez. Puis convertissez
-    la chaîne en programme (PRG TYPE OBJ\-> ou bien shift-gauche N E A sur
-    la HP-50, ou H C A sur la HP-48).
-    Stockez le résultat dans @SUBSG@.
-    Convertissez de même @CVTCAR@ par PRG TYPE OBJ\-> ou bien shift-gauche N E A.
-    Puis stockez le récultat dans @CVTCAR@.
-    Il n'y a pas besoin de remplacer une chaîne par une flèche.
+    Chargez le fichier <tt>cvtcar</tt> sur la calculatrice, ce qui
+    donne une chaîne dans la pile.  Puis convertissez la chaîne en
+    programme (<tt>PRG TYPE OBJ\-></tt>). Stockez le résultat dans
+    @CVTCAR@. Il n'y a pas besoin d'éditer la chaîne avant la conversion
+    en programme.
 - en: |
-    Edit the content of @SUBSG@. On the second line, replace the
-    <tt>"\\->"</tt> string by an arrow <tt>\-></tt> (right-shift zero).
-    Save. Then convert it to a program (PRG TYPE OBJ\-> or left-shift N E A
-    on the HP-50, or H C A on the HP-48).
-    Store the result into @SUBSG@.
-    Convert also @CVTCAR@ with PRG TYPE OBJ\->.
-    Store the result into @CVTCAR@. No need to replace a substring with an arrow.
+    Copy the <tt>cvtcar</tt> file to the HP calculator, which gives a
+    string on the stack.  Then convert the string to a program (<tt>PRG TYPE
+    OBJ\-></tt>). Store the result into @CVTCAR@. There is no need to 
+    edit the string before converting it into a program.
+- section: 0
+  fr: Copie de <tt>calfr</tt><var>-xxx</var>
+  en: Copy of <tt>calfr</tt><var>-xxx</var>
+  level: 4
 - fr: |
-    Pour CALFR ou CALFR-DBG, il y a de nombreuses sous-chaînes à remplacer
-    par des flèches ou d'autres caractères spéciaux. Pour ce faire, 
-    chargez la chaîne au niveau 1 de la pile et lancez @CVTCAR@.
-    Convertissez la chaîne en objet (PRG TYPE OBJ\-> ou bien shift-gauche N E A).
-    Puis stockez le résultat dans un nom de répertoire à votre guise.
+    Copiez le fichier <tt>calfr</tt><var>-xxx</var> adapté à votre cas.
+    Comme précédemment, cela donne une chaîne dans la pile. Lancez
+    @CVTCAR@ pour modifier les trigrammes tels que <tt>"\\->"</tt>
+    en caractères spéciaux. Puis convertissez la chaîne en objet
+    (<tt>PRG TYPE OBJ\-></tt>), cette fois un objet de type
+    répertoire (DIR). Stockez le résultat avec un nom à votre convenance.
 - en: |
-    For CALFR or CALFR-DBG, there are many substrings to replace with special 
-    characters. To do this, just load the string in the stack, level 1,
-    and execture @CVTCAR@. Then, convert the string into an object
-    (PRG TYPE OBJ\-> or left-shift N E A). Last, store the result in a
-    directory name you choose.
+    Copy the <tt>calfr</tt><var>-xxx</var> file which you find convenient (see above).
+    As before, this results in a string in the stack. Run
+    @CVTCAR@ to replace trigrams such as <tt>"\\->"</tt> by the corresponding
+    special characters. Then, convert the string into an object
+    (<tt>PRG TYPE OBJ\-></tt>), but this time, this object is a 
+    directory (DIR). Store the result with the name you prefer.
+- section: 0
+  fr: Copie de <tt>frf</tt>
+  en: Copy of <tt>frf</tt>
+  level: 4
 - fr: |
-    Si vous avez chargé le fichier <tt>frf</tt>, faites de même avec la chaîne
-    FRF&nbsp;: chargez-la dans la pile, appliquez-lui @CVTCAR@, convertissez
-    en objet et stockez le résultat dans la variable FRF. Déplacez cette
-    variable vers le répertoire créé précédemment.
+    Si vous voulez utiliser la variable FRF, chargez le fichier <tt>frf</tt>
+    dans la pile, appliquez-lui @CVTCAR@, convertissez en objet (cette
+    fois-ci, c'est un tableau) et stockez le résultat dans le nom FRF.
+    Envoyer cette variable FRF dans le répertoire où se trouvent
+    les programmes de conversion.
 - en: |
-    If you have copied the <tt>frf</tt> file, do the same procedure with 
-    the FRF string: load into the stack, level 1, run @CVTCAR@, convert
-    into an object and store the result into the FRF variable. Move this
-    variable into the directory just created.
+    If you want to use the FRF variable, copy the <tt>frf</tt> file
+    to the calculator, run @CVTCAR@ on this string, convert 
+    to an object (this time, this will be a list) and store it
+    with the name FRF. And move it into the directory where
+    you have stored all the conversion programs.
 - section: 0
   fr: Les programmes
   en: The programs
