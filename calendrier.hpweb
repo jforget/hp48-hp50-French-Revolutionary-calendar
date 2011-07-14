@@ -26,8 +26,11 @@ subsg: code
     ignore totalement les années.  Il ne compte que les jours, à partir
     du 1<sup>er</sup> janvier de l'an 1 du calendrier grégorien
     proleptique. Très pratique pour les 
-    calculateurs, beaucoup moins pour les humains.</li>
-
+    calculateurs, beaucoup moins pour les humains.
+    En fait, le calendrier <i lang='la'>Rata Die</i> ne vous servira
+    pas en tant que tel, mais simplement comme intermédiaire entre
+    les deux autres.
+    </li>
     <li> Le calendrier républicain. Le calendrier républicain
     a été en vigueur de 1792 à 1805, mais les programmes permettent
     d'utiliser des dates jusqu'à aujourd'hui et au-delà.
@@ -51,6 +54,8 @@ subsg: code
     completely the notion of year. It counts only the days since 
     January 1st, year 1, in the proleptic Gregorian calendar.
     Very convenient for computers, much less for humans.
+    Actually, the HP-48 just uses the <i lang='la'>Rata Die</i> calendar 
+    as a step between the two other calendars.
     </li>
     <li>The French Revolutionary calendar. This calendar was in effect
     in France only and from 1792 to 1805 only, but the programs allow you to
@@ -67,16 +72,9 @@ subsg: code
   en: Instructions for Use
 
 - fr: |
-    En fait, le calendrier <i lang='la'>Rata Die</i> ne vous servira
-    pas en tant que tel, mais simplement comme intermédiaire entre
-    les deux autres.
-
     Pour déterminer à quelle date du calendrier républicain correspond
     le 6 juin 1944, voici comment procéder. Tapez au choix&nbsp;:
 - en: |
-    Actually, you will just use the <i lang='la'>Rata Die</i> calendar 
-    as a step between the two other calendars.
-
     For example, you want to know which French Revolutionary date
     corresponds to June 6th, 1944. Just type any of:
 - code: |
@@ -176,14 +174,14 @@ subsg: code
     If the result includes a comma (<tt>1,</tt>), use the 50-ending files.
 - fr: |
     Les fichiers <tt>calfr-dbg-48</tt> et <tt>calfr-dbg-50</tt> comportent 16
-    entrées de menu, ce qui vous permet de tester séparément chaque programme. 
+    entrées de menu, ce qui vous permet de consulter et d'exécuter séparément chaque programme. 
     À l'inverse, les fichiers <tt>calfr-48</tt> et <tt>calfr-50</tt> ne comportent
     que les 10 entrées de menu indispensables, les autres programmes étant stockés
     dans des variables locales des 10 premiers programmes. Avec ces deux
     fichiers, le menu <tt>VAR</tt> est moins encombré.
 - en: |
     The files <tt>calfr-dbg-48</tt> and <tt>calfr-dbg-50</tt> contain 16
-    menu entries, which allow you to examine separately all programs.
+    menu entries, which allow you to examine and execute separately all programs.
     On the other side, the files <tt>calfr-48</tt> and <tt>calfr-50</tt>
     contain only the 10 necessary directory entries, some programs being
     stored in other programs' local variables, so the <tt>VAR</tt> menu
@@ -191,7 +189,7 @@ subsg: code
 - fr: |
     Vous pouvez charger le fichier <tt>frf</tt> ou le laisser de côté.
     Si vous n'utilisez pas ce fichier, le répertoire contenant les 
-    programmes de conversion occuperont moins de 2800 octets. Si vous
+    programmes de conversion occupera moins de 2800 octets. Si vous
     incluez le fichier <tt>frf</tt>, cela ajoutera 4758 octets.
     Tout dépend de la place disponible sur votre calculatrice.
 - en: |
@@ -209,80 +207,102 @@ subsg: code
   level: 4
 - fr: |
     Tout d'abord, il faut positionner le drapeau -51, pour que le délimiteur
-    de la partie décimale soit la virgule et non pas le point.
+    de la partie décimale d'un nombre soit la virgule et non pas le point.
 - en: |
     First, the -51 flag must be set, so the character separating the
-    fractional part from the integer part will be the comma.
+    fractional part from the integer part of a number will be the comma.
 - section: 0
   fr: Copie de <tt>subsg</tt>
-  en: Copy of <tt>subsg</tt>
+  en: Copying <tt>subsg</tt>
   level: 4
 - fr: |
     Chargez le fichier <tt>subsg</tt> sur la calculatrice, ce qui
-    donne une chaîne dans la pile. Passez en mode édition sur cette
-    chaîne. Sur la deuxième ligne, remplacez la chaîne <tt>"\\->"</tt>
-    par une flèche <tt>\-></tt> (shift-droit zéro). Quittez l'édition
-    en sauvegardant vos modifications. Puis convertissez la chaîne en
-    programme (<tt>PRG TYPE OBJ\-></tt> ou bien shift-gauche N E A sur
-    la HP-50, ou H C A sur la HP-48).  Stockez le résultat dans
-    @SUBSG@.
+    donne une chaîne dans la pile.
+
+    Passez en mode édition sur cette chaîne. Sur la deuxième ligne,
+    remplacez la chaîne <tt>"\\->"</tt> par une flèche <tt>\-></tt>
+    (shift-droit zéro). Quittez l'édition en sauvegardant votre
+    modification.
+
+    Puis convertissez la chaîne en programme (<tt>PRG TYPE OBJ\-></tt>
+    ou bien shift-gauche N E A sur la HP-50, ou H C A sur la HP-48).
+
+    Stockez le résultat dans @SUBSG@.
 - en: |
     Copy the <tt>subsg</tt> file to the HP calculator, which gives a
-    string on the stack.  Edit the content of this string. On the
-    second line, replace the <tt>"\\->"</tt> string by an
-    arrow <tt>\-></tt> (right-shift zero). Quit the editor and save
-    your edits. Then convert the string to a program (<tt>PRG TYPE
-    OBJ\-></tt> or left-shift N E A on the HP-50, or H C A on the
-    HP-48). Store the result into @SUBSG@.
+    string on the stack.
+
+    Edit the content of this string. On the second line, replace the
+    <tt>"\\->"</tt> string by an arrow <tt>\-></tt> (right-shift
+    zero). Quit the editor and save your edits.
+
+    Then convert the string to a program (<tt>PRG TYPE OBJ\-></tt> or
+    left-shift N E A on the HP-50, or H C A on the HP-48).
+
+    Store the result into @SUBSG@.
 - section: 0
   fr: Copie de <tt>cvtcar</tt>
-  en: Copy of <tt>cvtcar</tt>
+  en: Copying <tt>cvtcar</tt>
   level: 4
 - fr: |
     Chargez le fichier <tt>cvtcar</tt> sur la calculatrice, ce qui
-    donne une chaîne dans la pile.  Puis convertissez la chaîne en
-    programme (<tt>PRG TYPE OBJ\-></tt>). Stockez le résultat dans
-    @CVTCAR@. Il n'y a pas besoin d'éditer la chaîne avant la conversion
-    en programme.
+    donne une chaîne dans la pile.
+
+    Puis convertissez la chaîne en programme (<tt>PRG TYPE
+    OBJ\-></tt>).
+
+    Stockez le résultat dans @CVTCAR@. Il n'y a pas besoin d'éditer la
+    chaîne avant la conversion en programme.
 - en: |
     Copy the <tt>cvtcar</tt> file to the HP calculator, which gives a
-    string on the stack.  Then convert the string to a program (<tt>PRG TYPE
-    OBJ\-></tt>). Store the result into @CVTCAR@. There is no need to 
-    edit the string before converting it into a program.
+    string on the stack.
+
+    Then convert the string to a program (<tt>PRG TYPE OBJ\-></tt>).
+
+    Store the result into @CVTCAR@. There is no need to edit the
+    string before converting it into a program.
 - section: 0
   fr: Copie de <tt>calfr</tt><var>-xxx</var>
-  en: Copy of <tt>calfr</tt><var>-xxx</var>
+  en: Copying <tt>calfr</tt><var>-xxx</var>
   level: 4
 - fr: |
     Copiez le fichier <tt>calfr</tt><var>-xxx</var> adapté à votre cas.
-    Comme précédemment, cela donne une chaîne dans la pile. Lancez
-    @CVTCAR@ pour modifier les trigrammes tels que <tt>"\\->"</tt>
-    en caractères spéciaux. Puis convertissez la chaîne en objet
-    (<tt>PRG TYPE OBJ\-></tt>), cette fois un objet de type
-    répertoire (DIR). Stockez le résultat avec un nom à votre convenance.
+    Comme précédemment, cela donne une chaîne dans la pile.
+
+    Lancez @CVTCAR@ pour modifier les trigrammes tels que
+    <tt>"\\->"</tt> en caractères spéciaux.
+
+    Puis convertissez la chaîne en objet (<tt>PRG TYPE OBJ\-></tt>),
+    cette fois un objet de type répertoire (DIR).
+
+    Stockez le résultat avec un nom à votre convenance.
 - en: |
     Copy the <tt>calfr</tt><var>-xxx</var> file which you find convenient (see above).
-    As before, this results in a string in the stack. Run
-    @CVTCAR@ to replace trigrams such as <tt>"\\->"</tt> by the corresponding
-    special characters. Then, convert the string into an object
-    (<tt>PRG TYPE OBJ\-></tt>), but this time, this object is a 
-    directory (DIR). Store the result with the name you prefer.
+    As before, this results in a string in the stack.
+
+    Run @CVTCAR@ to replace trigrams such as <tt>"\\->"</tt> by the
+    corresponding special characters.
+
+    Then, convert the string into an object (<tt>PRG TYPE
+    OBJ\-></tt>), but this time, this object is a directory (DIR).
+
+    Store the result with the name you prefer.
 - section: 0
   fr: Copie de <tt>frf</tt>
-  en: Copy of <tt>frf</tt>
+  en: Copying <tt>frf</tt>
   level: 4
 - fr: |
     Si vous voulez utiliser la variable FRF, chargez le fichier <tt>frf</tt>
     dans la pile, appliquez-lui @CVTCAR@, convertissez en objet (cette
     fois-ci, c'est un tableau) et stockez le résultat dans le nom FRF.
-    Envoyer cette variable FRF dans le répertoire où se trouvent
+    Déplacez cette variable FRF dans le répertoire où se trouvent
     les programmes de conversion.
 - en: |
     If you want to use the FRF variable, copy the <tt>frf</tt> file
     to the calculator, run @CVTCAR@ on this string, convert 
     to an object (this time, this will be a list) and store it
     with the name FRF. And move it into the directory where
-    you have stored all the conversion programs.
+    you have stored all the conversion programs from <tt>calfr</tt><var>-xxx</var>.
 - section: 0
   fr: Les programmes
   en: The programs
@@ -398,7 +418,7 @@ subsg: code
     C'est la valeur <i lang='la'>Rata Die</i> du 1<sup>er</sup> janvier
     2001. Elle est facile à calculer. Le <i lang='la'>Rata Die</i> 
     du 1<sup>er</sup> janvier 1 est 1. À cela, il faut ajouter 2000 ans,
-    soit 2000&nbsp;x&nbsp;365 = 730000, plus les 29 février. Il y a 500 années
+    soit 2000&nbsp;x&nbsp;365 = 730000 jours, plus les 29 février. Il y a 500 années
     divisibles par 4, dont 15 ne sont pas bissextiles. Le nombre de 29 février
     est donc 485, d'où un total de 730486.
 
@@ -406,7 +426,7 @@ subsg: code
     This is the <i lang='la'>Rata Die</i> value for January 1st, 2001.
     This value is simple to compute. The <i lang='la'>Rata Die</i>
     value of January 1st, 1 is obviously 1. We add 2000 years, that is,
-    2000&nbsp;x&nbsp;365 = 730000, plus the number of February 29st in
+    2000&nbsp;x&nbsp;365 = 730000 days, plus the number of February 29th's in
     this period. There are 500 years multiple of 4, 15 of which are not
     leap years. Therefore, there are 485 leap years. And the sum
     of these numbers gives the result, 730486.
@@ -903,7 +923,7 @@ subsg: code
     s'effectue dès que <tt>I</tt> dépasse <tt>I10&nbsp;LG&nbsp;+</tt>,
     c'est-à-dire dès que <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> devient vraie.
 
-    2<sup>me</sup> cas, il y a plus de <tt>LG</tt> caractères d'affilée.
+    2<sup>me</sup> cas, il y a plus de <tt>LG</tt> caractères d'affilée sans espace.
     Ce qui signifie que <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> est vraie depuis
     un certain temps. On effectue alors le remplacement
     dès que l'on trouve un espace, c'est-à-dire lorsque
@@ -916,7 +936,7 @@ subsg: code
     as soon as <tt>I</tt> overcomes <tt>I10&nbsp;LG&nbsp;+</tt>, that is,
     as soon as <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> turns true.
  
-    Second case, there are more than <tt>LG</tt> successive characters.
+    Second case, there are more than <tt>LG</tt> successive characters without any space.
     That means that <tt>I&nbsp;I10&nbsp;-&nbsp;LG&nbsp;&gt;</tt> has been true
     for some time. So we execute the substitution on the first space, that is,
     when <tt>I&nbsp;I32&nbsp;==</tt> turns true.
@@ -1026,6 +1046,8 @@ subsg: code
   en: License
 - fr: |
     Ce code est diffusé sous les mêmes termes que Perl, la licence GPL
-    et la licence artistique.
+    et la licence artistique. Voir le fichier <tt>LICENSE</tt> (en anglais)
+    fourni dans le paquetage.
 - en: |
     This code is published under the same terms as Perl: GPL and Artistic License.
+    See the <tt>LICENSE</tt> file provided in the package.

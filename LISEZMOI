@@ -1,36 +1,35 @@
 Généralités
 -----------
 
-Vous trouvez ici des programmes pour HP-48 et HP-50
-pour convertir des dates du calendrier grégorien
-vers le calendrier républicain et vice-versa.
-Il y a également des programmes pour simuler une
-réforme qui n'a pas été appliquée, la décimalisation
-de l'heure.
+Vous trouvez ici des programmes pour HP-48 et HP-50 pour convertir des
+dates  du  calendrier  grégorien  vers le  calendrier  républicain  et
+vice-versa.  Il y a également  des programmes pour simuler une réforme
+qui n'a pas été appliquée, la décimalisation de l'heure.
+
+Ces  programmes  sont  copyright  (c)  2011, Jean  Forget.   Ils  sont
+diffusés  sous la  licence double  GPL et  licence artistique  (cf. le
+fichier LICENSE).
 
 hpcalc.org
 ----------
 
-Dézippez le fichier que vous avez téléchargé et
-consultez le fichier calendrier.fr.html dans
-un navigateur HTML. Vous y trouverez la suite
+Dézippez le fichier  que vous avez téléchargé et  consultez le fichier
+calendrier.fr.html dans un navigateur  HTML. Vous y trouverez la suite
 des instructions d'installation.
 
 github.org
 ----------
 
-Contrairement au paquet fourni par hpcalc.org, vous ne
-trouvez ici que les fichiers origines, desquels les autres
-fichiers dérivent. Pour générer ces fichiers dérivés,
-il vous faut un outil, disponible dans un autre 
-dépôt Git Hub.
+Contrairement au paquet fourni par hpcalc.org, vous ne trouvez ici que
+les  fichiers origines,  desquels les  autres fichiers  dérivent. Pour
+générer ces fichiers  dérivés, il vous faut un  outil, disponible dans
+un autre dépôt Git Hub.
 
 https://github.com/jforget/perl-literate-prog-HP48-HP50
 
-Ce n'est pas un outil à installer sur la calculatrice HP,
-mais sur un ordinateur (PC ou autre). Il faut avoir
-également sur cet ordinateur Graphviz, Perl ainsi
-que les modules YAML.pm et GraphViz.pm.
+Ce n'est pas un outil à  installer sur la calculatrice HP, mais sur un
+ordinateur (PC ou  autre). Il faut avoir également  sur cet ordinateur
+Graphviz, Perl ainsi que les modules YAML.pm et GraphViz.pm.
 
 http://www.graphviz.org/
 http://www.perl.org/
@@ -41,6 +40,6 @@ Une fois tout ceci installé, lancez la commande
 
 genere-hpweb calendrier
 
-Cela génère plusieurs fichiers, dont calendrier.fr.html.
-La suite de l'installation est expliquée dans ce fichier.
-Vous pouvez le lire dans un navigateur web.
+Cela génère plusieurs fichiers,  dont calendrier.fr.html.  La suite de
+l'installation  est expliquée dans  ce fichier.   Vous pouvez  le lire
+dans un navigateur web.
