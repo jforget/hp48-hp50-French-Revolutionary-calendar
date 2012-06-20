@@ -19,6 +19,10 @@ subsg: code
     calendrier grégorien, extrapolé dans le passé au-delà
     de l'année 1582, bien que la HP-48
     n'accepte les dates qu'à partir de cette année.
+    Non seulement la règle des années bissextiles est celle du
+    calendrier grégorien, mais en plus on considère que l'année
+    commence toujours le premier janvier, ce qui n'était pas toujours
+    le cas avec les calendriers réellement en usage au Moyen-Âge.
     Les dates grégoriennes sont exprimées avec un nombre au format
     JJ,MMAAAA ou bien MM,JJAAAA, en fonction de l'indicateur -42.</li>
 
@@ -46,7 +50,10 @@ subsg: code
     <ul>
     <li> The proleptic Gregorian calendar. This is the Gregorian
     calendar, but extending in the past farther than 1582, although
-    the HP-48 accepts dates only after this year. The Gregorian dates
+    the HP-48 accepts dates only after this year. Not only the leap
+    year rule is the same as the Gregorian rule, but also the beginning
+    of the year is always on January 1st, although it was not always
+    the case during the Middle Ages. The Gregorian dates
     are written in the standard HP-48 way, that is, DD,MMYYYY or
     MM,DDYYYY depending on the setting of flag -42.
     </li>
@@ -1015,25 +1022,27 @@ subsg: code
     Conn4x, en remplaçant les séquences avec un backslash par les caractères
     correspondants. De plus, elle enlève la première ligne <tt>%HPHP</tt>
     qui a l'air de déranger la calculatrice.
-
-    Les trigrammes remplacés sont ceux qui figurent dans <tt>calfr*</tt>, mais
-    il est possible d'en ajouter d'autres s'il y a besoin.
 - en: |
     This function replaces the automatic conversion which occurs
     when using Conn4x. It substitutes backslash-sequences with the corresponding
     special character. In addition, it removes the first line <tt>%HPHP</tt>
     which seems to bother the computer.
-
-    The function replaces only five different trigrams. These are the trigrams
-    used in <tt>calfr*</tt>, but if the need arises, you can add other trigrams
-    to be replaced.
 - code: |
     « 
-      "<-" 142 @SUBSG@
-      "->" 141 @SUBSG@
-      "<=" 137 @SUBSG@
-      ">=" 138 @SUBSG@
-      "=/" 139 @SUBSG@
+      "<)" 128 @SUBSG@   "<-" 142 @SUBSG@   "PI" 156 @SUBSG@
+      "x-" 129 @SUBSG@   "|v" 143 @SUBSG@   "GW" 157 @SUBSG@
+      ".V" 130 @SUBSG@   "|^" 144 @SUBSG@   "[]" 158 @SUBSG@
+      "v/" 131 @SUBSG@   "Gg" 145 @SUBSG@   "oo" 159 @SUBSG@
+      ".S" 132 @SUBSG@   "Gd" 146 @SUBSG@   "<<" 171 @SUBSG@
+      "GS" 133 @SUBSG@   "Ge" 147 @SUBSG@   "^o" 176 @SUBSG@
+      "|>" 134 @SUBSG@   "Gn" 148 @SUBSG@   "Gm" 181 @SUBSG@
+      "pi" 135 @SUBSG@   "Gh" 149 @SUBSG@   ">>" 187 @SUBSG@
+      ".d" 136 @SUBSG@   "Gl" 150 @SUBSG@   ".x" 215 @SUBSG@
+      "<=" 137 @SUBSG@   "Gr" 151 @SUBSG@   "O/" 216 @SUBSG@
+      ">=" 138 @SUBSG@   "Gs" 152 @SUBSG@   "Gb" 223 @SUBSG@
+      "=/" 139 @SUBSG@   "Gt" 153 @SUBSG@   ":-" 247 @SUBSG@
+      "Ga" 140 @SUBSG@   "Gw" 154 @SUBSG@
+      "->" 141 @SUBSG@   "GD" 155 @SUBSG@
       IF DUP "%%HP" POS
       THEN
         DUP 10 CHR POS 1 +
