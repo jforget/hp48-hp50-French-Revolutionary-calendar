@@ -614,12 +614,7 @@ subsg: code
     second cas s'il est masculin ou féminin. Avec le cas
     spécial du pluriel pour le "jour des récompenses".
     Ce chiffre est traduit en un préfixe "jour du", 
-    "jour de la" etc. Avec une nuance en plus&nbsp;:
-    un "0" signifie "masculin en toute certitude"
-    tandis qu'un "4" signifie "vraisemblablement masculin",
-    tout comme "5" signifie "vraisemblablement féminin".
-    C'est pour cela que l'on duplique la liste des
-    préfixes sur elle-même.
+    "jour de la" etc.
 - en: |
     Because of its size, the FRF variable is optional and
     the function printing the date can work no matter whether the
@@ -631,11 +626,7 @@ subsg: code
     case, whether the name is masculine or feminine.
     And there is the special case of the 
     <i lang='fr'>jour des récompenses</i> (day of rewards)
-    the only case where the noun is plural. And there is another subtlety:
-    "0" means "definitely masculine", while "4" means "I think
-    it is masculine, but I am not sure". Likewise, "1" is "definitely
-    feminine", while "6" is "likely feminine". This is why the
-    prefix list is duplicated and appended to itself.
+    the only case where the noun is plural.
 
 - code: |
     {
@@ -676,7 +667,7 @@ subsg: code
           DUP 1 1 SUB
           { " jour du " " jour de la " " jour de l'"
             " jour des " }
-          DUP + SWAP NUM 47 - GET SWAP 2 30 SUB + +
+          SWAP NUM 47 - GET SWAP 2 30 SUB + +
         END
       »
     »
