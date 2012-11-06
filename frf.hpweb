@@ -14,9 +14,6 @@ frf: code
     «&nbsp;1&nbsp;» pour «&nbsp;le&nbsp;» (nom féminin commençant par une consonne),
     «&nbsp;2&nbsp;» pour «&nbsp;l'&nbsp;» (nom masculin ou féminin commençant par une voyelle),
     «&nbsp;3&nbsp;» pour «&nbsp;les&nbsp;» (nom pluriel).
-    Dans certains cas, je n'étais pas sûr de l'article à utiliser. J'ai donc repéré ces mots
-    en leur attribuant «&nbsp;4&nbsp;» à la place de «&nbsp;0&nbsp;» (masculin)
-    ou «&nbsp;5&nbsp;» à la place de «&nbsp;1&nbsp;» (féminin).
 - en: |
     This is a big variable, the use of which is optional. This variable gives the celebration
     for each day in the French Revolutionary calendar.
@@ -26,8 +23,6 @@ frf: code
     "1" for a feminine noun beginning with a consonant, which translates to "la",
     "2" for a masculin or feminine noun beginning with a vowel, which translates to "l'",
     "3" for a plural noun beginning with any letter, which translates to "les".
-    In some cases, I was not sure of which article to use. I have marked these nouns
-    with "4" instead of "0" ("le", masculine) and "5" instead of "1" ("la", feminine).
 - code: |
     { |VND| |BRU| |FRI|
       |NIV| |PLU| |VNT|
@@ -49,9 +44,9 @@ frf: code
     "1pomme"            "0céleri"           "1poire"            "1betterave"        "2oie"
     "2héliotrope"       "1figue"            "1scorsonère"       "2alisier"          "1charrue"
     "0salsifis"         "1macre"            "0topinambour"      "2endive"           "0dindon"
-    "4chervis"          "0cresson"          "1dentelaire"       "1grenade"          "1herse"
-    "5bacchante"        "2azerole"          "1garance"          "2orange"           "0faisan"
-    "1pistache"         "4macjon"           "0coing"            "0cormier"          "0rouleau"
+    "0chervis"          "0cresson"          "1dentelaire"       "1grenade"          "1herse"
+    "1bacchante"        "2azerole"          "1garance"          "2orange"           "0faisan"
+    "1pistache"         "0macjon"           "0coing"            "0cormier"          "0rouleau"
 - section: FRI
   'fr,en': Frimaire
 - code: |
@@ -107,7 +102,7 @@ frf: code
 - code: |
     "1rose"             "0chêne"            "1fougère"          "2aubépine"         "0rossignol"
     "2ancolie"          "0muguet"           "0champignon"       "1jacinthe"         "0rateau"
-    "1rhubarbe"         "0sainfoin"         "0bâton-d'or"       "4chamérisier"      "0ver à soie"
+    "1rhubarbe"         "0sainfoin"         "0bâton-d'or"       "0chamérisier"      "0ver à soie"
     "1consoude"         "1pimprenelle"      "1corbeille-d'or"   "2arroche"          "0sarcloir"
     "0statice"          "1fritillaire"      "1bourrache"        "1valériane"        "1carpe"
     "0fusain"           "1civette"          "1buglosse"         "0sénevé"           "1houlette"
@@ -128,13 +123,13 @@ frf: code
     "0coriandre"        "2artichaut"        "1giroflée"         "1lavande"          "0chamois"
     "0tabac"            "1groseille"        "1gesse"            "1cerise"           "0parc"
     "1menthe"           "0cumin"            "0haricot"          "2orcanète"         "1pintade"
-    "1sauge"            "2ail"              "1vesce"            "0blé"              "5chalémie"
+    "1sauge"            "2ail"              "1vesce"            "0blé"              "1chalémie"
 - section: THE
   'fr,en': Thermidor
 - code: |
     "2épautre"          "0bouillon-blanc"   "0melon"            "2ivraie"           "0bélier"
     "1prèle"            "2armoise"          "0carthame"         "1mûre"             "2arrosoir"
-    "4panis"            "4salicor"          "2abricot"          "0basilic"          "1brebis"
+    "0panis"            "0salicor"          "2abricot"          "0basilic"          "1brebis"
     "1guimauve"         "0lin"              "2amande"           "1gentiane"         "2écluse"
     "1carline"          "0câprier"          "1lentille"         "2aunée"            "1loutre"
     "1myrte"            "0colza"            "0lupin"            "0coton"            "0moulin"
@@ -142,11 +137,11 @@ frf: code
   'fr,en': Fructidor
 - code: |
     "1prune"            "0millet"           "0lycoperdon"       "2escourgeon"       "0saumon"
-    "1tubéreuse"        "4sucrion"          "2apocyn"           "1réglisse"         "2échelle"
+    "1tubéreuse"        "0sucrion"          "2apocyn"           "1réglisse"         "2échelle"
     "1pastèque"         "0fenouil"          "2épine-vinette"    "1noix"             "1truite"
     "0citron"           "1cardère"          "0nerprun"          "0tagette"          "1hotte"
     "2églantier"        "1noisette"         "0houblon"          "0sorgho"           "2écrevisse"
-    "5bagarade"         "1verge-d'or"       "0maïs"             "0marron"           "0panier"
+    "1bagarade"         "1verge-d'or"       "0maïs"             "0marron"           "0panier"
 - section: ADD
   fr: Jours complémentaires
   en: Additional Days
