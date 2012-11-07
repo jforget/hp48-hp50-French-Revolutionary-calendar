@@ -1,0 +1,204 @@
+fr: Test des programmes de calendrier
+en: Calendar Programs Testing
+testcalfr-dmya: code
+testcalfr-mdya: code
+testcalfr-dmys: code
+testcalfr-mdys: code
+testcalfr-dmyl: code
+testcalfr-mdyl: code
+---
+- section: 0
+  fr: Test des programmes de calendrier
+  en: Calendar Programs Testing        
+- fr: |
+    Cette série de programmes permet de tester les programmes
+    de conversion fournis dans ce paquet.
+- en: |
+    This group of programs provides automatic checking of the
+    calendar conversion programs in the same package.
+- section: 0
+  fr: Mode d'emploi
+  en: Instructions for Use
+- fr: |
+    Lancez le programme. Il n'y a pas de paramètre en entrée. Lorsque
+    le programme s'achève, il laisse dans le registre
+    de pile de niveau 1 la liste des erreurs rencontrées. Par exemple,
+- en: |
+    Run the test program. There is no input parameters. When the program
+    ends, it leaves in the level-1
+    stack register the list of errors. For example,
+- code: |
+    { { 6,061944 "18 PRA 152" "19 PRA 152" }
+      { 11,111918 "20 BRU 127" "20 BRU 128" } }
+- fr: |
+    signifie que toutes les dates sauf deux ont réussi. Le 6 juin 1944
+    a donné comme résultat erroné "19 PRA 152" alors qu'il aurait dû donner
+    "18 PRA 152" et le 11 novembre 1918 a donné "20 BRU 128" alors qu'il
+    aurait fallu avoir "20 BRU 127".
+- en: |
+    means that all dates but two have passed. One error is with 6th
+    June 1944, which gave the wrong result "19 PRA 152" instead of "18
+    PRA 152" and the other is the 11th November 1918, which gave "20
+    BRU 128" instead of "20 BRU 127".
+- section: 0
+  'fr,en': Installation
+- section: 0
+  fr: Quels fichiers faut-il installer
+  en: Which files must be installed
+  level: 3
+- fr: |
+    Si vous utilisez une carte SD, ou bien dans le cas d'un glisser-déposer
+    sur un émulateur comme «&nbsp;emu48&nbsp;», alors vous aurez besoin
+    de SUBSG et de CVTCAR, fournis avec le programme principal, donc
+    déjà installés. Si vous utilisez le logiciel de connexion
+    «&nbsp;conn4x&nbsp;», ces deux programmes sont inutiles, le logiciel 
+    de connexion prenant à sa charge les transformations.
+- en: |
+    If you use a SD card, or if you drag-and-drop into an emulator such
+    as "emu48", you will need SUBSG and CVTCAR provided with
+    the main program, therefore already installed. If you use a connection
+    software such as "conn4x", this software performs the transformations
+    processed by SUBSG and CVTCAR so you do not need to install them.
+- fr: |
+    Si votre calculatrice est configurée pour des dates <tt>dd.mm.yy</tt>,
+    utilisez les fichiers dont le nom comporte la chaîne "dmy". Si vous préférez
+    les dates <tt>mm/dd/yy</tt>, utilisez les fichiers dont le nom comporte
+    la chaîne "mdy".
+- en: |
+    If your calculator is configured to use <tt>dd.mm.yy</tt> dates, use the
+    files named with "dmy". If you prefer the <tt>mm/dd/yy</tt> dates, use
+    the files named with "mdy".
+- fr: |
+    Si vous avez installé la variable <tt>frf</tt>, utilisez le fichier se
+    terminant par "l" (comme "long"). Sinon, utilisez le fichier se terminant
+    par "s" (comme "sans la variable"). Dans un cas comme dans l'autre,
+    vous pouvez également utiliser le fichier se terminant par "a", qui teste
+    le format abrégé.
+- en: |
+    If you have installed the <tt>frf</tt> variable, use the file with a
+    name ending in "l" (as in "long"). Else, use the file with a name ending
+    in "s" (as in "short"). In both cases, you can use also the file with
+    a name ending is "a". This file will give a program checking the
+    abbreviated format.
+- section: 0
+  fr: Installation avec une carte SD
+  en: Installation with a SD card
+  level: 3
+- section: 0
+  fr: Première étape
+  en: First Step
+  level: 4
+- fr: |
+    Tout d'abord, il faut positionner le drapeau -51, pour que le délimiteur
+    de la partie décimale d'un nombre soit la virgule et non pas le point.
+- en: |
+    First, the -51 flag must be set, so the character separating the
+    fractional part from the integer part of a number will be the comma.
+- section: 0
+  fr: Copie de <tt>testcalfr</tt><var>-xxx</var>
+  en: Copying <tt>testcalfr</tt><var>-xxx</var>
+  level: 4
+- fr: |
+    Copiez le fichier <tt>testcalfr</tt><var>-xxx</var> adapté à votre cas.
+    Comme précédemment, cela donne une chaîne dans la pile.
+
+    Lancez CVTCAR pour modifier les trigrammes tels que
+    <tt>"\\->"</tt> en caractères spéciaux.
+
+    Puis convertissez la chaîne en objet (<tt>PRG TYPE OBJ\-></tt>)
+    de type code.
+
+    Stockez le résultat avec un nom à votre convenance, en évitant les
+    noms déjà utilisés, ainsi que le nom réservé <tt>ERREURS</tt>.
+    Le programme est prêt à l'emploi.
+- en: |
+    Copy the <tt>testcalfr</tt><var>-xxx</var> file which you find convenient (see above).
+    As before, this results in a string in the stack.
+
+    Run CVTCAR to replace trigrams such as <tt>"\\->"</tt> by the
+    corresponding special characters.
+
+    Then, convert the string into an object (<tt>PRG TYPE
+    OBJ\-></tt>).
+
+    Store the result with the name you prefer, except those
+    already in use and the reserved name <tt>ERREURS</tt>.
+    Then you can run the test program.
+- section: 0
+  fr: Les programmes
+  en: The programs
+- section: TESTCALFR
+  fr: Squelette du programme
+  en: Program skeleton
+  level: 3
+  testcalfr-dmya: 1
+  testcalfr-mdya: 1
+  testcalfr-dmys: 1
+  testcalfr-mdys: 1
+  testcalfr-dmyl: 1
+  testcalfr-mdyl: 1
+- code: |
+    «
+      { } 'ERREURS' STO
+      { |DATES| }
+      1
+      « DUP OBJ\-> DROP \-> DONNEE DG DF
+        « DG GRFR |FONCTION| DUP 'DONNEE' SWAP STO+
+          IF DF \=/
+          THEN 'ERREURS' DONNEE 1 \->LIST STO+
+          END
+          0
+        »
+      »
+      DOLIST
+      DROP ERREURS
+    »
+
+- section: FONCTION
+  fr: La fonction à tester
+  en: Tested function
+  level: 3
+- fr: |
+    On peut tester l'affichage abrégé de la date ou l'affichage
+    long.
+- en: |
+    You can test either the abridged display or the long display
+    of the date.
+- code: |
+      FRABR
+  testcalfr-dmya: 1
+  testcalfr-mdya: 1
+- code: |
+      FRLONG
+  testcalfr-dmys: 1
+  testcalfr-mdys: 1
+  testcalfr-dmyl: 1
+  testcalfr-mdyl: 1
+- section: DATES
+  fr: Les dates à tester
+  en: The tested dates
+- code: |
+    { 6,061944 "18 PRA 152" }
+    { 11,111918 "20 BRU 127" }
+  testcalfr-dmya: 1
+  testcalfr-mdya: 1
+- code: |
+    { 6,061944 "Octidi 18 Prairial CLII" }
+    { 11,111918 "Décadi 20 Brumaire CXXVII" }
+  testcalfr-dmys: 1
+  testcalfr-mdys: 1
+- code: |
+    { 6,061944 "Octidi 18 Prairial CLII jour du pavot" }
+    { 11,111918 "Décadi 20 Brumaire CXXVII jour de la herse" }
+  testcalfr-dmyl: 1
+  testcalfr-mdyl: 1
+- section: 0
+  fr: Licence
+  en: License
+- fr: |
+    Ce code est diffusé sous les mêmes termes que Perl, la licence GPL
+    et la licence artistique. Voir le fichier <tt>LICENSE</tt> (en anglais)
+    fourni dans le paquetage.
+- en: |
+    This code is published under the same terms as Perl: GPL and Artistic License.
+    See the <tt>LICENSE</tt> file provided in the package.
