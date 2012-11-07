@@ -294,6 +294,19 @@ subsg: code
     OBJ\-></tt>), but this time, this object is a directory (DIR).
 
     Store the result with the name you prefer.
+- fr: |
+    Essayez la fonction @MAINTENANT@. Si vous obtenez un message
+    «&nbsp;DDAYS Error: Invalid Date&nbsp;», c'est que vous avez oublié
+    de sélectionner la virgule décimale. Supprimez le contenu du 
+    répertoire, puis le répertoire lui-même, sélectionnez la virgule
+    décimale et recommencez la copie du fichier <tt>calfr</tt><var>-xxx</var>.
+- en: |
+    Try the  @MAINTENANT@ (now) function. If you obtain a
+    «&nbsp;DDAYS Error: Invalid Date&nbsp;», that means that you have
+    forgotten to select the decimal comma before converting the string.
+    Now you have to purge the contents of the directory, then purge
+    the directory itself, select the decimal comma and restart with
+    the copying of the <tt>calfr</tt><var>-xxx</var> file.
 - section: 0
   fr: Copie de <tt>frf</tt>
   en: Copying <tt>frf</tt>
