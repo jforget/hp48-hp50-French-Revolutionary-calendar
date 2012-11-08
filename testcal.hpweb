@@ -28,18 +28,30 @@ testcalfr-mdyl: code
     ends, it leaves in the level-1
     stack register the list of errors. For example,
 - code: |
-    { { 6,061944 "18 PRA 152" "19 PRA 152" }
-      { 11,111918 "20 BRU 127" "20 BRU 128" } }
+    { { 6061944 "18 PRA 152" "19 PRA 152" }
+      { 11111918 "20 BRU 127" "20 BRU 128" } }
 - fr: |
     signifie que toutes les dates sauf deux ont réussi. Le 6 juin 1944
     a donné comme résultat erroné "19 PRA 152" alors qu'il aurait dû donner
     "18 PRA 152" et le 11 novembre 1918 a donné "20 BRU 128" alors qu'il
     aurait fallu avoir "20 BRU 127".
+
+    Remarque&nbsp;: les dates sont au format DDMMYYYY au lieu de
+    DD,MMYYYY ou bien au format MMDDYYYY au lieu de MM,DDYYYY. Comme
+    cela, lors de l'installation, on n'a pas à s'embêter avec le
+    drapeau -51 sélectionnant le point décimal ou la virgule décimale.
+
 - en: |
     means that all dates but two have passed. One error is with 6th
     June 1944, which gave the wrong result "19 PRA 152" instead of "18
     PRA 152" and the other is the 11th November 1918, which gave "20
     BRU 128" instead of "20 BRU 127".
+
+    Remark: the dates use the DDMMYYYY format instead of DD,MMYYYY, or
+    the MMDDYYYY format instead of MM,DDYYYY. This way, installation 
+    does not depend on the setting of the -51 flag, choosing between
+    a decimal point or a decimal comma.
+
 - section: 0
   'fr,en': Installation
 - section: 0
@@ -84,16 +96,6 @@ testcalfr-mdyl: code
   fr: Installation avec une carte SD
   en: Installation with a SD card
   level: 3
-- section: 0
-  fr: Première étape
-  en: First Step
-  level: 4
-- fr: |
-    Tout d'abord, il faut positionner le drapeau -51, pour que le délimiteur
-    de la partie décimale d'un nombre soit la virgule et non pas le point.
-- en: |
-    First, the -51 flag must be set, so the character separating the
-    fractional part from the integer part of a number will be the comma.
 - section: 0
   fr: Copie de <tt>testcalfr</tt><var>-xxx</var>
   en: Copying <tt>testcalfr</tt><var>-xxx</var>
@@ -143,7 +145,7 @@ testcalfr-mdyl: code
       { |DATES| }
       1
       « DUP OBJ\-> DROP \-> DONNEE DG DF
-        « DG GRFR |FONCTION| DUP 'DONNEE' SWAP STO+
+        « DG 1E6 / GRFR |FONCTION| DUP 'DONNEE' SWAP STO+
           IF DF \=/
           THEN 'ERREURS' DONNEE 1 \->LIST STO+
           END
@@ -178,18 +180,18 @@ testcalfr-mdyl: code
   fr: Les dates à tester
   en: The tested dates
 - code: |
-    { 6,061944 "18 PRA 152" }
-    { 11,111918 "20 BRU 127" }
+    { 6061944 "18 PRA 152" }
+    { 11111918 "20 BRU 127" }
   testcalfr-dmya: 1
   testcalfr-mdya: 1
 - code: |
-    { 6,061944 "Octidi 18 Prairial CLII" }
-    { 11,111918 "Décadi 20 Brumaire CXXVII" }
+    { 6061944 "Octidi 18 Prairial CLII" }
+    { 11111918 "Décadi 20 Brumaire CXXVII" }
   testcalfr-dmys: 1
   testcalfr-mdys: 1
 - code: |
-    { 6,061944 "Octidi 18 Prairial CLII jour du pavot" }
-    { 11,111918 "Décadi 20 Brumaire CXXVII jour de la herse" }
+    { 6061944 "Octidi 18 Prairial CLII jour du pavot" }
+    { 11111918 "Décadi 20 Brumaire CXXVII jour de la herse" }
   testcalfr-dmyl: 1
   testcalfr-mdyl: 1
 - section: 0
