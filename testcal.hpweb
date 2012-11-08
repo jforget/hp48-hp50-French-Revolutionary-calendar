@@ -180,19 +180,478 @@ testcalfr-mdyl: code
   fr: Les dates à tester
   en: The tested dates
 - code: |
-    { 6061944 "18 PRA 152" }
-    { 11111918 "20 BRU 127" }
+    { 22091792 "1 VND 1" }
+    { 23101793 "2 BRU 2" }
+    { 27071794 "9 THE 2" }
+    { 23111794 "3 FRI 3" }
+    {  5101795 "13 VND 4" }
+    { 25121795 "4 NIV 4" }
+    { 24011797 "5 PLU 5" }
+    { 24021798 "6 VNT 6" }
+    {  9111799 "18 BRU 8" }
+    { 29031801 "8 GER 9" }
+    { 30041804 "10 FLO 12" }
+    {  1061807 "12 PRA 15" }
+    {  3071810 "14 MES 18" }
+    {  4081813 "16 THE 21" }
+    {  4091816 "18 FRU 24" }
+    {  1012000 "12 NIV 208" }
+    { 11052001 "22 FLO 209" }
+    { 22091792 "1 VND 1" }
+    { 21091793 "5 S-C 1" }
+    { 22091793 "1 VND 2" }
+    { 21091794 "5 S-C 2" }
+    { 22091794 "1 VND 3" }
+    { 22091795 "6 S-C 3" }
+    { 23091795 "1 VND 4" }
+    { 21091796 "5 S-C 4" }
+    { 22091796 "1 VND 5" }
+    { 21091797 "5 S-C 5" }
+    { 22091797 "1 VND 6" }
+    { 22091799 "6 S-C 7" }
+    { 23091799 "1 VND 8" }
+    { 22091800 "5 S-C 8" }
+    { 23091800 "1 VND 9" }
+    { 22091801 "5 S-C 9" }
+    { 23091801 "1 VND 10" }
+    { 22091823 "5 S-C 31" }
+    { 23091823 "1 VND 32" }
+    { 22091824 "6 S-C 32" }
+    { 23091824 "1 VND 33" }
+    { 22091825 "5 S-C 33" }
+    { 23091825 "1 VND 34" }
+    { 21091892 "5 S-C 100" }
+    { 22091892 "1 VND 101" }
+    { 22091900 "6 S-C 108" }
+    { 23091900 "1 VND 109" }
+    { 21091992 "5 S-C 200" }
+    { 22091992 "1 VND 201" }
+    { 21092000 "6 S-C 208" }
+    { 22092000 "1 VND 209" }
+    { 20092092 "5 S-C 300" }
+    { 21092092 "1 VND 301" }
+    { 21092100 "6 S-C 308" }
+    { 22092100 "1 VND 309" }
+    { 21092192 "6 S-C 400" }
+    { 22092192 "1 VND 401" }
+    { 21092193 "5 S-C 401" }
+    { 22092199 "1 VND 408" }
+    { 22092200 "6 S-C 408" }
+    { 23092791 "1 VND 1000" }
+    { 22092792 "1 VND 1001" }
+    {  1013000 "12 NIV 1208" }
+    {  1013001 "11 NIV 1209" }
+    { 22093791 "1 VND 2000" }
+    { 22093792 "1 VND 2001" }
+    {  1014000 "12 NIV 2208" }
+    {  1014001 "12 NIV 2209" }
+    { 23094791 "1 VND 3000" }
+    { 22094792 "1 VND 3001" }
+    {  1015000 "12 NIV 3208" }
+    {  1015001 "11 NIV 3209" }
+    { 22095791 "1 VND 4000" }
+    { 21095792 "1 VND 4001" }
+    {  1016000 "13 NIV 4208" }
+    {  1016001 "13 NIV 4209" }
+    { 22096791 "1 VND 5000" }
+    { 22096792 "2 VND 5001" }
+    { 21097791 "1 VND 6000" }
+    { 21097792 "1 VND 6001" }
   testcalfr-dmya: 1
+- code: |
+    {  9221792 "1 VND 1" }
+    { 10231793 "2 BRU 2" }
+    {  7271794 "9 THE 2" }
+    { 11231794 "3 FRI 3" }
+    { 10051795 "13 VND 4" }
+    { 12251795 "4 NIV 4" }
+    {  1241797 "5 PLU 5" }
+    {  2241798 "6 VNT 6" }
+    { 11091799 "18 BRU 8" }
+    {  3291801 "8 GER 9" }
+    {  4301804 "10 FLO 12" }
+    {  6011807 "12 PRA 15" }
+    {  7031810 "14 MES 18" }
+    {  8041813 "16 THE 21" }
+    {  9041816 "18 FRU 24" }
+    {  1012000 "12 NIV 208" }
+    {  5112001 "22 FLO 209" }
+    {  9221792 "1 VND 1" }
+    {  9211793 "5 S-C 1" }
+    {  9221793 "1 VND 2" }
+    {  9211794 "5 S-C 2" }
+    {  9221794 "1 VND 3" }
+    {  9221795 "6 S-C 3" }
+    {  9231795 "1 VND 4" }
+    {  9211796 "5 S-C 4" }
+    {  9221796 "1 VND 5" }
+    {  9211797 "5 S-C 5" }
+    {  9221797 "1 VND 6" }
+    {  9221799 "6 S-C 7" }
+    {  9231799 "1 VND 8" }
+    {  9221800 "5 S-C 8" }
+    {  9231800 "1 VND 9" }
+    {  9221801 "5 S-C 9" }
+    {  9231801 "1 VND 10" }
+    {  9221823 "5 S-C 31" }
+    {  9231823 "1 VND 32" }
+    {  9221824 "6 S-C 32" }
+    {  9231824 "1 VND 33" }
+    {  9221825 "5 S-C 33" }
+    {  9231825 "1 VND 34" }
+    {  9211892 "5 S-C 100" }
+    {  9221892 "1 VND 101" }
+    {  9221900 "6 S-C 108" }
+    {  9231900 "1 VND 109" }
+    {  9211992 "5 S-C 200" }
+    {  9221992 "1 VND 201" }
+    {  9212000 "6 S-C 208" }
+    {  9222000 "1 VND 209" }
+    {  9202092 "5 S-C 300" }
+    {  9212092 "1 VND 301" }
+    {  9212100 "6 S-C 308" }
+    {  9222100 "1 VND 309" }
+    {  9212192 "6 S-C 400" }
+    {  9222192 "1 VND 401" }
+    {  9212193 "5 S-C 401" }
+    {  9222199 "1 VND 408" }
+    {  9222200 "6 S-C 408" }
+    {  9232791 "1 VND 1000" }
+    {  9222792 "1 VND 1001" }
+    {  1013000 "12 NIV 1208" }
+    {  1013001 "11 NIV 1209" }
+    {  9223791 "1 VND 2000" }
+    {  9223792 "1 VND 2001" }
+    {  1014000 "12 NIV 2208" }
+    {  1014001 "12 NIV 2209" }
+    {  9234791 "1 VND 3000" }
+    {  9224792 "1 VND 3001" }
+    {  1015000 "12 NIV 3208" }
+    {  1015001 "11 NIV 3209" }
+    {  9225791 "1 VND 4000" }
+    {  9215792 "1 VND 4001" }
+    {  1016000 "13 NIV 4208" }
+    {  1016001 "13 NIV 4209" }
+    {  9226791 "1 VND 5000" }
+    {  9226792 "2 VND 5001" }
+    {  9217791 "1 VND 6000" }
+    {  9217792 "1 VND 6001" }
   testcalfr-mdya: 1
 - code: |
-    { 6061944 "Octidi 18 Prairial CLII" }
-    { 11111918 "Décadi 20 Brumaire CXXVII" }
+    { 22091792 "Primidi 1 Vendémiaire I" }
+    { 23101793 "Duodi 2 Brumaire II" }
+    { 27071794 "Nonidi 9 Thermidor II" }
+    { 23111794 "Tridi 3 Frimaire III" }
+    {  5101795 "Tridi 13 Vendémiaire IV" }
+    { 25121795 "Quartidi 4 Nivôse IV" }
+    { 24011797 "Quintidi 5 Pluviôse V" }
+    { 24021798 "Sextidi 6 Ventôse VI" }
+    {  9111799 "Octidi 18 Brumaire VIII" }
+    { 29031801 "Octidi 8 Germinal IX" }
+    { 30041804 "Décadi 10 Floréal XII" }
+    {  1061807 "Duodi 12 Prairial XV" }
+    {  3071810 "Quartidi 14 Messidor XVIII" }
+    {  4081813 "Sextidi 16 Thermidor XXI" }
+    {  4091816 "Octidi 18 Fructidor XXIV" }
+    {  1012000 "Duodi 12 Nivôse CCVIII" }
+    { 11052001 "Duodi 22 Floréal CCIX" }
+    { 22091792 "Primidi 1 Vendémiaire I" }
+    { 21091793 "Quintidi 5 jour complémentaire I" }
+    { 22091793 "Primidi 1 Vendémiaire II" }
+    { 21091794 "Quintidi 5 jour complémentaire II" }
+    { 22091794 "Primidi 1 Vendémiaire III" }
+    { 22091795 "Sextidi 6 jour complémentaire III" }
+    { 23091795 "Primidi 1 Vendémiaire IV" }
+    { 21091796 "Quintidi 5 jour complémentaire IV" }
+    { 22091796 "Primidi 1 Vendémiaire V" }
+    { 21091797 "Quintidi 5 jour complémentaire V" }
+    { 22091797 "Primidi 1 Vendémiaire VI" }
+    { 22091799 "Sextidi 6 jour complémentaire VII" }
+    { 23091799 "Primidi 1 Vendémiaire VIII" }
+    { 22091800 "Quintidi 5 jour complémentaire VIII" }
+    { 23091800 "Primidi 1 Vendémiaire IX" }
+    { 22091801 "Quintidi 5 jour complémentaire IX" }
+    { 23091801 "Primidi 1 Vendémiaire X" }
+    { 22091823 "Quintidi 5 jour complémentaire XXXI" }
+    { 23091823 "Primidi 1 Vendémiaire XXXII" }
+    { 22091824 "Sextidi 6 jour complémentaire XXXII" }
+    { 23091824 "Primidi 1 Vendémiaire XXXIII" }
+    { 22091825 "Quintidi 5 jour complémentaire XXXIII" }
+    { 23091825 "Primidi 1 Vendémiaire XXXIV" }
+    { 21091892 "Quintidi 5 jour complémentaire C" }
+    { 22091892 "Primidi 1 Vendémiaire CI" }
+    { 22091900 "Sextidi 6 jour complémentaire CVIII" }
+    { 23091900 "Primidi 1 Vendémiaire CIX" }
+    { 21091992 "Quintidi 5 jour complémentaire CC" }
+    { 22091992 "Primidi 1 Vendémiaire CCI" }
+    { 21092000 "Sextidi 6 jour complémentaire CCVIII" }
+    { 22092000 "Primidi 1 Vendémiaire CCIX" }
+    { 20092092 "Quintidi 5 jour complémentaire CCC" }
+    { 21092092 "Primidi 1 Vendémiaire CCCI" }
+    { 21092100 "Sextidi 6 jour complémentaire CCCVIII" }
+    { 22092100 "Primidi 1 Vendémiaire CCCIX" }
+    { 21092192 "Sextidi 6 jour complémentaire CD" }
+    { 22092192 "Primidi 1 Vendémiaire CDI" }
+    { 21092193 "Quintidi 5 jour complémentaire CDI" }
+    { 22092199 "Primidi 1 Vendémiaire CDVIII" }
+    { 22092200 "Sextidi 6 jour complémentaire CDVIII" }
+    { 23092791 "Primidi 1 Vendémiaire M" }
+    { 22092792 "Primidi 1 Vendémiaire MI" }
+    {  1013000 "Duodi 12 Nivôse MCCVIII" }
+    {  1013001 "Primidi 11 Nivôse MCCIX" }
+    { 22093791 "Primidi 1 Vendémiaire MM" }
+    { 22093792 "Primidi 1 Vendémiaire MMI" }
+    {  1014000 "Duodi 12 Nivôse MMCCVIII" }
+    {  1014001 "Duodi 12 Nivôse MMCCIX" }
+    { 23094791 "Primidi 1 Vendémiaire MMM" }
+    { 22094792 "Primidi 1 Vendémiaire MMMI" }
+    {  1015000 "Duodi 12 Nivôse MMMCCVIII" }
+    {  1015001 "Primidi 11 Nivôse MMMCCIX" }
+    { 22095791 "Primidi 1 Vendémiaire 4000" }
+    { 21095792 "Primidi 1 Vendémiaire 4001" }
+    {  1016000 "Tridi 13 Nivôse 4208" }
+    {  1016001 "Tridi 13 Nivôse 4209" }
+    { 22096791 "Primidi 1 Vendémiaire 5000" }
+    { 22096792 "Duodi 2 Vendémiaire 5001" }
+    { 21097791 "Primidi 1 Vendémiaire 6000" }
+    { 21097792 "Primidi 1 Vendémiaire 6001" }
   testcalfr-dmys: 1
+- code: |
+    {  9221792 "Primidi 1 Vendémiaire I" }
+    { 10231793 "Duodi 2 Brumaire II" }
+    {  7271794 "Nonidi 9 Thermidor II" }
+    { 11231794 "Tridi 3 Frimaire III" }
+    { 10051795 "Tridi 13 Vendémiaire IV" }
+    { 12251795 "Quartidi 4 Nivôse IV" }
+    {  1241797 "Quintidi 5 Pluviôse V" }
+    {  2241798 "Sextidi 6 Ventôse VI" }
+    { 11091799 "Octidi 18 Brumaire VIII" }
+    {  3291801 "Octidi 8 Germinal IX" }
+    {  4301804 "Décadi 10 Floréal XII" }
+    {  6011807 "Duodi 12 Prairial XV" }
+    {  7031810 "Quartidi 14 Messidor XVIII" }
+    {  8041813 "Sextidi 16 Thermidor XXI" }
+    {  9041816 "Octidi 18 Fructidor XXIV" }
+    {  1012000 "Duodi 12 Nivôse CCVIII" }
+    {  5112001 "Duodi 22 Floréal CCIX" }
+    {  9221792 "Primidi 1 Vendémiaire I" }
+    {  9211793 "Quintidi 5 jour complémentaire I" }
+    {  9221793 "Primidi 1 Vendémiaire II" }
+    {  9211794 "Quintidi 5 jour complémentaire II" }
+    {  9221794 "Primidi 1 Vendémiaire III" }
+    {  9221795 "Sextidi 6 jour complémentaire III" }
+    {  9231795 "Primidi 1 Vendémiaire IV" }
+    {  9211796 "Quintidi 5 jour complémentaire IV" }
+    {  9221796 "Primidi 1 Vendémiaire V" }
+    {  9211797 "Quintidi 5 jour complémentaire V" }
+    {  9221797 "Primidi 1 Vendémiaire VI" }
+    {  9221799 "Sextidi 6 jour complémentaire VII" }
+    {  9231799 "Primidi 1 Vendémiaire VIII" }
+    {  9221800 "Quintidi 5 jour complémentaire VIII" }
+    {  9231800 "Primidi 1 Vendémiaire IX" }
+    {  9221801 "Quintidi 5 jour complémentaire IX" }
+    {  9231801 "Primidi 1 Vendémiaire X" }
+    {  9221823 "Quintidi 5 jour complémentaire XXXI" }
+    {  9231823 "Primidi 1 Vendémiaire XXXII" }
+    {  9221824 "Sextidi 6 jour complémentaire XXXII" }
+    {  9231824 "Primidi 1 Vendémiaire XXXIII" }
+    {  9221825 "Quintidi 5 jour complémentaire XXXIII" }
+    {  9231825 "Primidi 1 Vendémiaire XXXIV" }
+    {  9211892 "Quintidi 5 jour complémentaire C" }
+    {  9221892 "Primidi 1 Vendémiaire CI" }
+    {  9221900 "Sextidi 6 jour complémentaire CVIII" }
+    {  9231900 "Primidi 1 Vendémiaire CIX" }
+    {  9211992 "Quintidi 5 jour complémentaire CC" }
+    {  9221992 "Primidi 1 Vendémiaire CCI" }
+    {  9212000 "Sextidi 6 jour complémentaire CCVIII" }
+    {  9222000 "Primidi 1 Vendémiaire CCIX" }
+    {  9202092 "Quintidi 5 jour complémentaire CCC" }
+    {  9212092 "Primidi 1 Vendémiaire CCCI" }
+    {  9212100 "Sextidi 6 jour complémentaire CCCVIII" }
+    {  9222100 "Primidi 1 Vendémiaire CCCIX" }
+    {  9212192 "Sextidi 6 jour complémentaire CD" }
+    {  9222192 "Primidi 1 Vendémiaire CDI" }
+    {  9212193 "Quintidi 5 jour complémentaire CDI" }
+    {  9222199 "Primidi 1 Vendémiaire CDVIII" }
+    {  9222200 "Sextidi 6 jour complémentaire CDVIII" }
+    {  9232791 "Primidi 1 Vendémiaire M" }
+    {  9222792 "Primidi 1 Vendémiaire MI" }
+    {  1013000 "Duodi 12 Nivôse MCCVIII" }
+    {  1013001 "Primidi 11 Nivôse MCCIX" }
+    {  9223791 "Primidi 1 Vendémiaire MM" }
+    {  9223792 "Primidi 1 Vendémiaire MMI" }
+    {  1014000 "Duodi 12 Nivôse MMCCVIII" }
+    {  1014001 "Duodi 12 Nivôse MMCCIX" }
+    {  9234791 "Primidi 1 Vendémiaire MMM" }
+    {  9224792 "Primidi 1 Vendémiaire MMMI" }
+    {  1015000 "Duodi 12 Nivôse MMMCCVIII" }
+    {  1015001 "Primidi 11 Nivôse MMMCCIX" }
+    {  9225791 "Primidi 1 Vendémiaire 4000" }
+    {  9215792 "Primidi 1 Vendémiaire 4001" }
+    {  1016000 "Tridi 13 Nivôse 4208" }
+    {  1016001 "Tridi 13 Nivôse 4209" }
+    {  9226791 "Primidi 1 Vendémiaire 5000" }
+    {  9226792 "Duodi 2 Vendémiaire 5001" }
+    {  9217791 "Primidi 1 Vendémiaire 6000" }
+    {  9217792 "Primidi 1 Vendémiaire 6001" }
   testcalfr-mdys: 1
 - code: |
-    { 6061944 "Octidi 18 Prairial CLII jour du pavot" }
-    { 11111918 "Décadi 20 Brumaire CXXVII jour de la herse" }
+    { 22091792 "Primidi 1 Vendémiaire I jour du raisin" }
+    { 23101793 "Duodi 2 Brumaire II jour du céleri" }
+    { 27071794 "Nonidi 9 Thermidor II jour de la mûre" }
+    { 23111794 "Tridi 3 Frimaire III jour de la chicorée" }
+    {  5101795 "Tridi 13 Vendémiaire IV jour du potiron" }
+    { 25121795 "Quartidi 4 Nivôse IV jour du soufre" }
+    { 24011797 "Quintidi 5 Pluviôse V jour du taureau" }
+    { 24021798 "Sextidi 6 Ventôse VI jour de l'asaret" }
+    {  9111799 "Octidi 18 Brumaire VIII jour de la dentelaire" }
+    { 29031801 "Octidi 8 Germinal IX jour de la jonquille" }
+    { 30041804 "Décadi 10 Floréal XII jour du rateau" }
+    {  1061807 "Duodi 12 Prairial XV jour de la bétoine" }
+    {  3071810 "Quartidi 14 Messidor XVIII jour de la lavande" }
+    {  4081813 "Sextidi 16 Thermidor XXI jour de la guimauve" }
+    {  4091816 "Octidi 18 Fructidor XXIV jour du nerprun" }
+    {  1012000 "Duodi 12 Nivôse CCVIII jour de l'argile" }
+    { 11052001 "Duodi 22 Floréal CCIX jour de la fritillaire" }
+    { 22091792 "Primidi 1 Vendémiaire I jour du raisin" }
+    { 21091793 "Quintidi 5 jour complémentaire I jour des récompenses" }
+    { 22091793 "Primidi 1 Vendémiaire II jour du raisin" }
+    { 21091794 "Quintidi 5 jour complémentaire II jour des récompenses" }
+    { 22091794 "Primidi 1 Vendémiaire III jour du raisin" }
+    { 22091795 "Sextidi 6 jour complémentaire III jour de la révolution" }
+    { 23091795 "Primidi 1 Vendémiaire IV jour du raisin" }
+    { 21091796 "Quintidi 5 jour complémentaire IV jour des récompenses" }
+    { 22091796 "Primidi 1 Vendémiaire V jour du raisin" }
+    { 21091797 "Quintidi 5 jour complémentaire V jour des récompenses" }
+    { 22091797 "Primidi 1 Vendémiaire VI jour du raisin" }
+    { 22091799 "Sextidi 6 jour complémentaire VII jour de la révolution" }
+    { 23091799 "Primidi 1 Vendémiaire VIII jour du raisin" }
+    { 22091800 "Quintidi 5 jour complémentaire VIII jour des récompenses" }
+    { 23091800 "Primidi 1 Vendémiaire IX jour du raisin" }
+    { 22091801 "Quintidi 5 jour complémentaire IX jour des récompenses" }
+    { 23091801 "Primidi 1 Vendémiaire X jour du raisin" }
+    { 22091823 "Quintidi 5 jour complémentaire XXXI jour des récompenses" }
+    { 23091823 "Primidi 1 Vendémiaire XXXII jour du raisin" }
+    { 22091824 "Sextidi 6 jour complémentaire XXXII jour de la révolution" }
+    { 23091824 "Primidi 1 Vendémiaire XXXIII jour du raisin" }
+    { 22091825 "Quintidi 5 jour complémentaire XXXIII jour des récompenses" }
+    { 23091825 "Primidi 1 Vendémiaire XXXIV jour du raisin" }
+    { 21091892 "Quintidi 5 jour complémentaire C jour des récompenses" }
+    { 22091892 "Primidi 1 Vendémiaire CI jour du raisin" }
+    { 22091900 "Sextidi 6 jour complémentaire CVIII jour de la révolution" }
+    { 23091900 "Primidi 1 Vendémiaire CIX jour du raisin" }
+    { 21091992 "Quintidi 5 jour complémentaire CC jour des récompenses" }
+    { 22091992 "Primidi 1 Vendémiaire CCI jour du raisin" }
+    { 21092000 "Sextidi 6 jour complémentaire CCVIII jour de la révolution" }
+    { 22092000 "Primidi 1 Vendémiaire CCIX jour du raisin" }
+    { 20092092 "Quintidi 5 jour complémentaire CCC jour des récompenses" }
+    { 21092092 "Primidi 1 Vendémiaire CCCI jour du raisin" }
+    { 21092100 "Sextidi 6 jour complémentaire CCCVIII jour de la révolution" }
+    { 22092100 "Primidi 1 Vendémiaire CCCIX jour du raisin" }
+    { 21092192 "Sextidi 6 jour complémentaire CD jour de la révolution" }
+    { 22092192 "Primidi 1 Vendémiaire CDI jour du raisin" }
+    { 21092193 "Quintidi 5 jour complémentaire CDI jour des récompenses" }
+    { 22092199 "Primidi 1 Vendémiaire CDVIII jour du raisin" }
+    { 22092200 "Sextidi 6 jour complémentaire CDVIII jour de la révolution" }
+    { 23092791 "Primidi 1 Vendémiaire M jour du raisin" }
+    { 22092792 "Primidi 1 Vendémiaire MI jour du raisin" }
+    {  1013000 "Duodi 12 Nivôse MCCVIII jour de l'argile" }
+    {  1013001 "Primidi 11 Nivôse MCCIX jour du granit" }
+    { 22093791 "Primidi 1 Vendémiaire MM jour du raisin" }
+    { 22093792 "Primidi 1 Vendémiaire MMI jour du raisin" }
+    {  1014000 "Duodi 12 Nivôse MMCCVIII jour de l'argile" }
+    {  1014001 "Duodi 12 Nivôse MMCCIX jour de l'argile" }
+    { 23094791 "Primidi 1 Vendémiaire MMM jour du raisin" }
+    { 22094792 "Primidi 1 Vendémiaire MMMI jour du raisin" }
+    {  1015000 "Duodi 12 Nivôse MMMCCVIII jour de l'argile" }
+    {  1015001 "Primidi 11 Nivôse MMMCCIX jour du granit" }
+    { 22095791 "Primidi 1 Vendémiaire 4000 jour du raisin" }
+    { 21095792 "Primidi 1 Vendémiaire 4001 jour du raisin" }
+    {  1016000 "Tridi 13 Nivôse 4208 jour de l'ardoise" }
+    {  1016001 "Tridi 13 Nivôse 4209 jour de l'ardoise" }
+    { 22096791 "Primidi 1 Vendémiaire 5000 jour du raisin" }
+    { 22096792 "Duodi 2 Vendémiaire 5001 jour du safran" }
+    { 21097791 "Primidi 1 Vendémiaire 6000 jour du raisin" }
+    { 21097792 "Primidi 1 Vendémiaire 6001 jour du raisin" }
   testcalfr-dmyl: 1
+- code: |
+    {  9221792 "Primidi 1 Vendémiaire I jour du raisin" }
+    { 10231793 "Duodi 2 Brumaire II jour du céleri" }
+    {  7271794 "Nonidi 9 Thermidor II jour de la mûre" }
+    { 11231794 "Tridi 3 Frimaire III jour de la chicorée" }
+    { 10051795 "Tridi 13 Vendémiaire IV jour du potiron" }
+    { 12251795 "Quartidi 4 Nivôse IV jour du soufre" }
+    {  1241797 "Quintidi 5 Pluviôse V jour du taureau" }
+    {  2241798 "Sextidi 6 Ventôse VI jour de l'asaret" }
+    { 11091799 "Octidi 18 Brumaire VIII jour de la dentelaire" }
+    {  3291801 "Octidi 8 Germinal IX jour de la jonquille" }
+    {  4301804 "Décadi 10 Floréal XII jour du rateau" }
+    {  6011807 "Duodi 12 Prairial XV jour de la bétoine" }
+    {  7031810 "Quartidi 14 Messidor XVIII jour de la lavande" }
+    {  8041813 "Sextidi 16 Thermidor XXI jour de la guimauve" }
+    {  9041816 "Octidi 18 Fructidor XXIV jour du nerprun" }
+    {  1012000 "Duodi 12 Nivôse CCVIII jour de l'argile" }
+    {  5112001 "Duodi 22 Floréal CCIX jour de la fritillaire" }
+    {  9221792 "Primidi 1 Vendémiaire I jour du raisin" }
+    {  9211793 "Quintidi 5 jour complémentaire I jour des récompenses" }
+    {  9221793 "Primidi 1 Vendémiaire II jour du raisin" }
+    {  9211794 "Quintidi 5 jour complémentaire II jour des récompenses" }
+    {  9221794 "Primidi 1 Vendémiaire III jour du raisin" }
+    {  9221795 "Sextidi 6 jour complémentaire III jour de la révolution" }
+    {  9231795 "Primidi 1 Vendémiaire IV jour du raisin" }
+    {  9211796 "Quintidi 5 jour complémentaire IV jour des récompenses" }
+    {  9221796 "Primidi 1 Vendémiaire V jour du raisin" }
+    {  9211797 "Quintidi 5 jour complémentaire V jour des récompenses" }
+    {  9221797 "Primidi 1 Vendémiaire VI jour du raisin" }
+    {  9221799 "Sextidi 6 jour complémentaire VII jour de la révolution" }
+    {  9231799 "Primidi 1 Vendémiaire VIII jour du raisin" }
+    {  9221800 "Quintidi 5 jour complémentaire VIII jour des récompenses" }
+    {  9231800 "Primidi 1 Vendémiaire IX jour du raisin" }
+    {  9221801 "Quintidi 5 jour complémentaire IX jour des récompenses" }
+    {  9231801 "Primidi 1 Vendémiaire X jour du raisin" }
+    {  9221823 "Quintidi 5 jour complémentaire XXXI jour des récompenses" }
+    {  9231823 "Primidi 1 Vendémiaire XXXII jour du raisin" }
+    {  9221824 "Sextidi 6 jour complémentaire XXXII jour de la révolution" }
+    {  9231824 "Primidi 1 Vendémiaire XXXIII jour du raisin" }
+    {  9221825 "Quintidi 5 jour complémentaire XXXIII jour des récompenses" }
+    {  9231825 "Primidi 1 Vendémiaire XXXIV jour du raisin" }
+    {  9211892 "Quintidi 5 jour complémentaire C jour des récompenses" }
+    {  9221892 "Primidi 1 Vendémiaire CI jour du raisin" }
+    {  9221900 "Sextidi 6 jour complémentaire CVIII jour de la révolution" }
+    {  9231900 "Primidi 1 Vendémiaire CIX jour du raisin" }
+    {  9211992 "Quintidi 5 jour complémentaire CC jour des récompenses" }
+    {  9221992 "Primidi 1 Vendémiaire CCI jour du raisin" }
+    {  9212000 "Sextidi 6 jour complémentaire CCVIII jour de la révolution" }
+    {  9222000 "Primidi 1 Vendémiaire CCIX jour du raisin" }
+    {  9202092 "Quintidi 5 jour complémentaire CCC jour des récompenses" }
+    {  9212092 "Primidi 1 Vendémiaire CCCI jour du raisin" }
+    {  9212100 "Sextidi 6 jour complémentaire CCCVIII jour de la révolution" }
+    {  9222100 "Primidi 1 Vendémiaire CCCIX jour du raisin" }
+    {  9212192 "Sextidi 6 jour complémentaire CD jour de la révolution" }
+    {  9222192 "Primidi 1 Vendémiaire CDI jour du raisin" }
+    {  9212193 "Quintidi 5 jour complémentaire CDI jour des récompenses" }
+    {  9222199 "Primidi 1 Vendémiaire CDVIII jour du raisin" }
+    {  9222200 "Sextidi 6 jour complémentaire CDVIII jour de la révolution" }
+    {  9232791 "Primidi 1 Vendémiaire M jour du raisin" }
+    {  9222792 "Primidi 1 Vendémiaire MI jour du raisin" }
+    {  1013000 "Duodi 12 Nivôse MCCVIII jour de l'argile" }
+    {  1013001 "Primidi 11 Nivôse MCCIX jour du granit" }
+    {  9223791 "Primidi 1 Vendémiaire MM jour du raisin" }
+    {  9223792 "Primidi 1 Vendémiaire MMI jour du raisin" }
+    {  1014000 "Duodi 12 Nivôse MMCCVIII jour de l'argile" }
+    {  1014001 "Duodi 12 Nivôse MMCCIX jour de l'argile" }
+    {  9234791 "Primidi 1 Vendémiaire MMM jour du raisin" }
+    {  9224792 "Primidi 1 Vendémiaire MMMI jour du raisin" }
+    {  1015000 "Duodi 12 Nivôse MMMCCVIII jour de l'argile" }
+    {  1015001 "Primidi 11 Nivôse MMMCCIX jour du granit" }
+    {  9225791 "Primidi 1 Vendémiaire 4000 jour du raisin" }
+    {  9215792 "Primidi 1 Vendémiaire 4001 jour du raisin" }
+    {  1016000 "Tridi 13 Nivôse 4208 jour de l'ardoise" }
+    {  1016001 "Tridi 13 Nivôse 4209 jour de l'ardoise" }
+    {  9226791 "Primidi 1 Vendémiaire 5000 jour du raisin" }
+    {  9226792 "Duodi 2 Vendémiaire 5001 jour du safran" }
+    {  9217791 "Primidi 1 Vendémiaire 6000 jour du raisin" }
+    {  9217792 "Primidi 1 Vendémiaire 6001 jour du raisin" }
   testcalfr-mdyl: 1
 - section: 0
   fr: Licence
