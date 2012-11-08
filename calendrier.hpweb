@@ -485,6 +485,7 @@ subsg: code
       « 'A' DECR 4 / IP 
         A 100 / IP - 
         A 400 / IP +
+        A 4000 / IP -
         IF { 3 7 11 15 } A POS 0 \=/
         THEN 1 +
         END
@@ -671,7 +672,7 @@ subsg: code
           "Nivôse" "Pluviôse" "Ventôse"
           "Germinal" "Floréal" "Prairial"
           "Messidor" "Thermidor" "Fructidor"
-          "jour additionnel" } 
+          "jour complémentaire" } 
         D 100 / IP 100 MOD GET + " " +
         D 10000 / IP @N10R@ +
         IF 'FRF' VTYPE 0 \>=
@@ -849,20 +850,26 @@ subsg: code
   'calfr-dbg-48,calfr-dbg-50': 1
 - code: |
     .
-      « ""
-      1 3 START "M" 1000 @NR@ NEXT
-      "CM" 900 @NR@
-      "D"  500 @NR@
-      "CD" 400 @NR@
-      1 3 START "C"  100 @NR@ NEXT
-      "XC"  90 @NR@
-      "L"   50 @NR@
-      "XL"  40 @NR@
-      1 3 START "X"   10 @NR@ NEXT
-      "IX"   9 @NR@
-      "V"    5 @NR@
-      "IV"   4 @NR@
-      1 3 START "I"    1 @NR@ NEXT
+      «
+        IF \<-N 4000 <
+        THEN
+          ""
+          1 3 START "M" 1000 @NR@ NEXT
+          "CM" 900 @NR@
+          "D"  500 @NR@
+          "CD" 400 @NR@
+          1 3 START "C"  100 @NR@ NEXT
+          "XC"  90 @NR@
+          "L"   50 @NR@
+          "XL"  40 @NR@
+          1 3 START "X"   10 @NR@ NEXT
+          "IX"   9 @NR@
+          "V"    5 @NR@
+          "IV"   4 @NR@
+          1 3 START "I"    1 @NR@ NEXT
+        ELSE
+          \<-N \->STR
+        END
       »
     »
 
